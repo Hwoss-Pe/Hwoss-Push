@@ -6,8 +6,29 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="messsagePushing" />
+        <module name="cron" />
+        <module name="handler" />
+        <module name="common" />
+        <module name="stream" />
+        <module name="web" />
+        <module name="data-house" />
+        <module name="service-api-impl" />
+        <module name="support" />
+        <module name="service-api" />
       </profile>
     </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common" options="-parameters" />
+      <module name="cron" options="-parameters" />
+      <module name="data-house" options="-parameters" />
+      <module name="handler" options="-parameters" />
+      <module name="service-api" options="-parameters" />
+      <module name="service-api-impl" options="-parameters" />
+      <module name="stream" options="-parameters" />
+      <module name="support" options="-parameters" />
+      <module name="web" options="-parameters" />
+    </option>
   </component>
 </project>
