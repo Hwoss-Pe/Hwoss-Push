@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class Test {
     @RequestMapping("/test")
     String test(){
+        aa.builder().name("test");
+//        log.info("");
         return "nihao ";
     }
 
