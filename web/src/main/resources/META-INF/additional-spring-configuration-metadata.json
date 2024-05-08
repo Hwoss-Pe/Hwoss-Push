@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "hwoss",
+      "type": "java.lang.String",
+      "description": "Description for hwoss."
+    }
+  ]
+}

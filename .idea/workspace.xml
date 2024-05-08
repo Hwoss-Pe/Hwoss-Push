@@ -4,13 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="增加日志框架，xml文件还没读取">
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="修改日志不输出，springProfile全责">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cron/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/handler/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/web/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/web/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/lomback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/com/web/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/web/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/lomback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/support/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +44,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/web/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="2g5ydCZt57OWtc0CtrY6Whz3kIQ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -44,6 +56,7 @@
     <option name="showModules" value="false" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -53,7 +66,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="SELECTIVE" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../austin-master/austin-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -61,7 +75,7 @@
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.16528928" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="build.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -70,17 +84,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MessageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="web" />
       <extension name="coverage">
@@ -113,7 +116,11 @@
       <workItem from="1715002707691" duration="6231000" />
       <workItem from="1715093817702" duration="4289000" />
       <workItem from="1715146356459" duration="404000" />
-      <workItem from="1715157220047" duration="2094000" />
+      <workItem from="1715157220047" duration="4956000" />
+      <workItem from="1715166486546" duration="752000" />
+      <workItem from="1715167316539" duration="158000" />
+      <workItem from="1715167514100" duration="2317000" />
+      <workItem from="1715178056276" duration="1720000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -143,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715096031891</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="修改日志不输出，springProfile全责">
+      <created>1715159539843</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715159539843</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +179,8 @@
     <MESSAGE value="创建项目结构引入Spring框架" />
     <MESSAGE value="lombok依赖修正" />
     <MESSAGE value="增加日志框架，xml文件还没读取" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加日志框架，xml文件还没读取" />
+    <MESSAGE value="修改日志不输出，springProfile全责" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改日志不输出，springProfile全责" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
