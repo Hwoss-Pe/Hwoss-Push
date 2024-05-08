@@ -1,0 +1,16 @@
+2024-05-08 17:10:39.301 [main] INFO  com.MessageApplication - Starting MessageApplication using Java 1.8.0_382 on LAPTOP-OG6LR54A with PID 12764 (D:\messsagePushing\web\target\classes started by Hwoss in D:\messsagePushing)
+2024-05-08 17:10:39.303 [main] INFO  com.MessageApplication - No active profile set, falling back to default profiles: default
+2024-05-08 17:10:40.782 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-05-08 17:10:40.789 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-08 17:10:40.789 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-08 17:10:40.789 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2024-05-08 17:10:40.851 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-08 17:10:40.851 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1512 ms
+2024-05-08 17:10:41.326 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-08 17:10:41.341 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-08 17:10:41.574 [main] INFO  com.MessageApplication - Started MessageApplication in 2.614 seconds (JVM running for 3.869)
+2024-05-08 17:10:46.174 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-08 17:10:46.174 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-08 17:10:46.176 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-05-08 17:10:46.191 [http-nio-8080-exec-1] INFO  com.web.Test - Testing
+2024-05-08 17:10:46.192 [http-nio-8080-exec-1] INFO  com.web.Test - 1111
