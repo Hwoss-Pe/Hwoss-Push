@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="创建BasicResultVo作为返回类型共业务层调用，并且数据从RespStatusEnum枚举里面获得&#10;这里优雅的写法就是链式调用多用this关键字进行当前对象的调用，以及以后这种含数据的最终返回类型用泛型解决不要去用Object">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,19 +86,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MessageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="web" />
       <extension name="coverage">
@@ -140,7 +125,7 @@
       <workItem from="1715167514100" duration="2317000" />
       <workItem from="1715178056276" duration="3575000" />
       <workItem from="1715238011187" duration="3848000" />
-      <workItem from="1715262432069" duration="5119000" />
+      <workItem from="1715262432069" duration="5282000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -191,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715269217514</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="创建BasicResultVo作为返回类型共业务层调用，并且数据从RespStatusEnum枚举里面获得&#10;这里优雅的写法就是链式调用多用this关键字进行当前对象的调用，以及以后这种含数据的最终返回类型用泛型解决不要去用Object">
+      <created>1715269384134</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715269384134</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
