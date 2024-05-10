@@ -1,6 +1,10 @@
 package service.api.pojo;
 
 import com.common.domain.SimpleTaskInfo;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import java.util.List;
 
@@ -9,6 +13,10 @@ import java.util.List;
  * @date 2024/05/10
  * 响应封装
  */
+@Data
+@Accessors(chain = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class SendResponse {
 
     /**

@@ -27,7 +27,7 @@ public class SendRequest {
     /**
      * 模板的Id
      */
-    private String messageTemplateId;
+    private Long messageTemplateId;
 
     /**
      * 如果是send就必须传入消息对象
@@ -39,7 +39,7 @@ public class SendRequest {
      */
     private List<String> recallList;
 
-    public SendRequest(String code, String messageTemplateId, MessageParam messageParam) {
+    public SendRequest(String code, Long messageTemplateId, MessageParam messageParam) {
         this.code = code;
         this.messageTemplateId = messageTemplateId;
         this.messageParam = messageParam;
