@@ -28,7 +28,7 @@ public class ProcessContext<T extends ProcessModel> implements Serializable {
     /**
      * 是否中断
      */
-    private boolean isBreak;
+    private Boolean isBreak;
 
     /**
      * 标识这个是哪个模型的上下文

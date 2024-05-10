@@ -10,4 +10,5 @@ public interface BusinessProcess<T extends ProcessModel> {
      * @param context 继承这个接口去处理真正的逻辑
      */
     void process(ProcessContext<T> context);
+
 }

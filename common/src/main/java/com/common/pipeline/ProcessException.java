@@ -16,7 +16,7 @@ public class ProcessException extends RuntimeException {
         this.processContext = processContext;
     }
 
-    public ProcessContext<? extends ProcessModel> getProcessContext() {
+    public <T extends ProcessModel> ProcessContext<? extends ProcessModel> getProcessContext() {
         return processContext;
     }
 
