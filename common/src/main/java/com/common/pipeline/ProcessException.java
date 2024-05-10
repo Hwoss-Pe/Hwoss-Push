@@ -4,6 +4,11 @@ import com.common.enums.RespStatusEnum;
 
 import java.util.Objects;
 
+/**
+ * @author Hwoss
+ * @date 2024/05/10
+ * 自定义异常方便做返回结果
+ */
 public class ProcessException extends RuntimeException {
     /**
      * 流程处理上下文

@@ -15,5 +15,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProcessTemplate<T extends ProcessModel> {
+
+    /**
+     * 存储多个业务
+     */
     private List<BusinessProcess<T>> businessProcessList;
 }

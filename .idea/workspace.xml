@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="责任链接口的实现设计，自定义责任链异常处理">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/ProcessController.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="编写责任链ProcessController，并且做预检查，也就是ProcessTemplate(某个责任链模板)，通过责任链去获取业务列表List&lt;BusinessProcess&gt;&#10;再去获取对应的模板获取业务列表然后执行，泛化问题不知道是否有影响代码运行，还没调试">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/domain/TaskInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/dto/model/ContentModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/serivice/impl/domain/SendTaskModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/serivice/impl/serivce/SendServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/BusinessProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/BusinessProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/ProcessContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/ProcessContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/ProcessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/ProcessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/ProcessModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/ProcessModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/ProcessTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/ProcessTemplate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +158,7 @@
       <workItem from="1715269456354" duration="513000" />
       <workItem from="1715270141696" duration="821000" />
       <workItem from="1715326115791" duration="8552000" />
-      <workItem from="1715341398581" duration="2770000" />
+      <workItem from="1715341398581" duration="5413000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -247,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715335275986</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="编写责任链ProcessController，并且做预检查，也就是ProcessTemplate(某个责任链模板)，通过责任链去获取业务列表List&lt;BusinessProcess&gt;&#10;再去获取对应的模板获取业务列表然后执行，泛化问题不知道是否有影响代码运行，还没调试">
+      <created>1715344507072</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1715344507072</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +291,8 @@
     <MESSAGE value="创建BasicResultVo作为返回类型共业务层调用，并且数据从RespStatusEnum枚举里面获得&#10;这里优雅的写法就是链式调用多用this关键字进行当前对象的调用，以及以后这种含数据的最终返回类型用泛型解决不要去用Object" />
     <MESSAGE value="增加请求和响应的对象封装，请求通过去区分相响应内容区分撤回信息还是发送信息，对于对应的设置消息内容，区别好bizId和bussId，然后封装到SimpleTask进行执行，这样封装就保证请求一个然后扇出处理" />
     <MESSAGE value="责任链接口的实现设计，自定义责任链异常处理" />
-    <option name="LAST_COMMIT_MESSAGE" value="责任链接口的实现设计，自定义责任链异常处理" />
+    <MESSAGE value="编写责任链ProcessController，并且做预检查，也就是ProcessTemplate(某个责任链模板)，通过责任链去获取业务列表List&lt;BusinessProcess&gt;&#10;再去获取对应的模板获取业务列表然后执行，泛化问题不知道是否有影响代码运行，还没调试" />
+    <option name="LAST_COMMIT_MESSAGE" value="编写责任链ProcessController，并且做预检查，也就是ProcessTemplate(某个责任链模板)，通过责任链去获取业务列表List&lt;BusinessProcess&gt;&#10;再去获取对应的模板获取业务列表然后执行，泛化问题不知道是否有影响代码运行，还没调试" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
