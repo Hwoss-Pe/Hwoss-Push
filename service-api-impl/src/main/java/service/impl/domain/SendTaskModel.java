@@ -1,4 +1,4 @@
-package serivice.impl.domain;
+package service.impl.domain;
 
 import com.common.domain.TaskInfo;
 import com.common.pipeline.ProcessModel;

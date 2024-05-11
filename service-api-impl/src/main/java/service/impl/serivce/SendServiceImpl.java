@@ -1,4 +1,4 @@
-package serivice.impl.serivce;
+package service.impl.serivce;
 
 
 import com.common.domain.SimpleTaskInfo;
@@ -8,13 +8,12 @@ import com.common.pipeline.ProcessController;
 import com.common.vo.BasicResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import serivice.impl.domain.SendTaskModel;
+import service.impl.domain.SendTaskModel;
 import service.api.pojo.BatchRequest;
 import service.api.pojo.SendRequest;
 import service.api.pojo.SendResponse;
 import service.api.service.SendService;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;

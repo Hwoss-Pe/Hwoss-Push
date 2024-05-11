@@ -33,7 +33,7 @@ public enum RespStatusEnum {
      */
     CLIENT_BAD_PARAMETER("C01", "客户端的参数配置错误"),
     TEMPLATE_NOT_FOUND("C02", "模板找不到对应的数据"),
-    TOO_MANY_REQUEST("C03", "请求大于100"),
+    TOO_MANY_REQUEST("C03", "单次请求接收者大于100"),
     NO_LOGIN("C04", "请先登录"),
     LOGIN("C05", "测试环境，无需登录"),
 

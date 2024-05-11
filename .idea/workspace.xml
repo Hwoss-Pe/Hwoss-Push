@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="增加ContentModel用来对于不同渠道的数据进行划分，理解SM，PM，BM的关系，只有BM是真正作用在业务层进行操作，因此对于创建出需要用的模型的时候就去实现PM，然后设置到Context里面，最后用ProcessController进行传递上下文就行">
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="实现接口send,但是ProcessController还需要进行注入">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/constant/FuncConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api-impl/service-api-impl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendPreCheckBusiness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/config/PipeLineConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/serivice/impl/serivce/SendServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/serivice/impl/serivce/SendServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api/src/main/java/service/api/pojo/SendRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api/src/main/java/service/api/pojo/SendRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api/src/main/java/service/api/pojo/SendResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api/src/main/java/service/api/pojo/SendResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/enums/RespStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/RespStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/ProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/pipeline/ProcessController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/serivice/impl/domain/SendTaskModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/domain/SendTaskModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/serivice/impl/serivce/SendServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/serivce/SendServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +74,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="模块" />
+    <property name="project.structure.last.edited" value="Facet" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.16528928" />
     <property name="settings.editor.selected.configurable" value="com.star.easydoc.view.settings.kdoc.template.KtClassSettingsConfigurable" />
@@ -97,15 +102,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,7 +156,8 @@
       <workItem from="1715269456354" duration="513000" />
       <workItem from="1715270141696" duration="821000" />
       <workItem from="1715326115791" duration="8552000" />
-      <workItem from="1715341398581" duration="6324000" />
+      <workItem from="1715341398581" duration="6518000" />
+      <workItem from="1715411478714" duration="4835000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -260,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715348067821</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="实现接口send,但是ProcessController还需要进行注入">
+      <created>1715348946504</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1715348946504</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +306,8 @@
     <MESSAGE value="责任链接口的实现设计，自定义责任链异常处理" />
     <MESSAGE value="编写责任链ProcessController，并且做预检查，也就是ProcessTemplate(某个责任链模板)，通过责任链去获取业务列表List&lt;BusinessProcess&gt;&#10;再去获取对应的模板获取业务列表然后执行，泛化问题不知道是否有影响代码运行，还没调试" />
     <MESSAGE value="增加ContentModel用来对于不同渠道的数据进行划分，理解SM，PM，BM的关系，只有BM是真正作用在业务层进行操作，因此对于创建出需要用的模型的时候就去实现PM，然后设置到Context里面，最后用ProcessController进行传递上下文就行" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加ContentModel用来对于不同渠道的数据进行划分，理解SM，PM，BM的关系，只有BM是真正作用在业务层进行操作，因此对于创建出需要用的模型的时候就去实现PM，然后设置到Context里面，最后用ProcessController进行传递上下文就行" />
+    <MESSAGE value="实现接口send,但是ProcessController还需要进行注入" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现接口send,但是ProcessController还需要进行注入" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

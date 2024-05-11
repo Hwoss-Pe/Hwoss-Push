@@ -15,6 +15,11 @@ import java.util.Objects;
 public class ProcessController {
     private Map<String, ProcessTemplate<?>> templateConfig = null;
 
+
+    public void setTemplateConfig(Map<String, ProcessTemplate<?>> templateConfig) {
+        this.templateConfig = templateConfig;
+    }
+
     public ProcessContext process(ProcessContext context) {
 //    前置检查
         try {
