@@ -54,6 +54,11 @@ public class TaskInfo implements Serializable, ProcessModel {
      * 发送渠道
      */
     private Integer sendChannel;
+    /**
+     * 消息类型
+     */
+    private Integer msgType;
+
 
     /**
      * 模板类型

@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="为责任量配置业务的进行，配置类PipeLine，好像要加扫描包路径才能扫到对应的业务包，这里也为项目启动的时候映射出code和对应ProcessTemplate，由Controller后去对应的ProcessTemplate后进行所运用的业务链子，总的来说就是启动组装对应的链子。&#10;做了请求的前置检查用stream流">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/constant/CommonConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAssembleBusiness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/dao/MessageTemplateDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/domain/MessageTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/TaskInfoUtils.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="常量设计，引入jpa的相关用法实现在MessageTemplateDao里面，以及TaskInfo和对应的MessTemplate数据进行组装，运用Optional类型，优化jdk8前比较丑陋的写法，衍生出多种api">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/dto/model/EmailContentModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/dto/model/SmsContentModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/ChannelType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/PowerfulEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ContentHolderUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/domain/TaskInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/domain/TaskInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAssembleBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAssembleBusiness.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="SELECTIVE" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../austin-master/austin-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -82,6 +84,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.common.dto.model" />
       <recent name="com.web" />
     </key>
   </component>
@@ -99,15 +102,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,7 +158,8 @@
       <workItem from="1715326115791" duration="8552000" />
       <workItem from="1715341398581" duration="6518000" />
       <workItem from="1715411478714" duration="6834000" />
-      <workItem from="1715435534269" duration="6308000" />
+      <workItem from="1715435534269" duration="6601000" />
+      <workItem from="1715499587658" duration="5767000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -278,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715416943947</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="常量设计，引入jpa的相关用法实现在MessageTemplateDao里面，以及TaskInfo和对应的MessTemplate数据进行组装，运用Optional类型，优化jdk8前比较丑陋的写法，衍生出多种api">
+      <created>1715442671766</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1715442671766</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +324,8 @@
     <MESSAGE value="增加ContentModel用来对于不同渠道的数据进行划分，理解SM，PM，BM的关系，只有BM是真正作用在业务层进行操作，因此对于创建出需要用的模型的时候就去实现PM，然后设置到Context里面，最后用ProcessController进行传递上下文就行" />
     <MESSAGE value="实现接口send,但是ProcessController还需要进行注入" />
     <MESSAGE value="为责任量配置业务的进行，配置类PipeLine，好像要加扫描包路径才能扫到对应的业务包，这里也为项目启动的时候映射出code和对应ProcessTemplate，由Controller后去对应的ProcessTemplate后进行所运用的业务链子，总的来说就是启动组装对应的链子。&#10;做了请求的前置检查用stream流" />
-    <option name="LAST_COMMIT_MESSAGE" value="为责任量配置业务的进行，配置类PipeLine，好像要加扫描包路径才能扫到对应的业务包，这里也为项目启动的时候映射出code和对应ProcessTemplate，由Controller后去对应的ProcessTemplate后进行所运用的业务链子，总的来说就是启动组装对应的链子。&#10;做了请求的前置检查用stream流" />
+    <MESSAGE value="常量设计，引入jpa的相关用法实现在MessageTemplateDao里面，以及TaskInfo和对应的MessTemplate数据进行组装，运用Optional类型，优化jdk8前比较丑陋的写法，衍生出多种api" />
+    <option name="LAST_COMMIT_MESSAGE" value="常量设计，引入jpa的相关用法实现在MessageTemplateDao里面，以及TaskInfo和对应的MessTemplate数据进行组装，运用Optional类型，优化jdk8前比较丑陋的写法，衍生出多种api" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
