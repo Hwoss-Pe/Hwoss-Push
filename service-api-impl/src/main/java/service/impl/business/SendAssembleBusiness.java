@@ -1,6 +1,9 @@
 package service.impl.business;
 
+import cn.hutool.core.text.CharSequenceUtil;
 import cn.hutool.core.text.StrPool;
+import cn.hutool.core.util.ReflectUtil;
+import cn.hutool.json.JSONUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.common.constant.CommonConstant;
@@ -13,19 +16,22 @@ import com.common.pipeline.ProcessContext;
 import com.common.vo.BasicResultVo;
 import com.hwoss.suport.dao.MessageTemplateDao;
 import com.hwoss.suport.domain.MessageTemplate;
+import com.hwoss.suport.utils.ContentHolderUtil;
 import com.hwoss.suport.utils.TaskInfoUtils;
+
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.annotations.common.reflection.ReflectionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.api.pojo.MessageParam;
 import service.impl.domain.SendTaskModel;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 /**
  * @author Hwoss
- * @date 2024/05/11
  * 组装对应的参数
  */
 @Slf4j
@@ -91,17 +97,29 @@ public class SendAssembleBusiness implements BusinessProcess<SendTaskModel> {
         JSONObject jsonObject = JSON.parseObject(messageTemplate.getMsgContent());
 
 //        组装通过携带去覆盖模板变量的值
-        Field[] fields = contentModelClass.getFields();
-        ContentModel contentModel;
-        try {
-            contentModel = contentModelClass.newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        Field[] fields = ReflectUtil.getFields(contentModelClass);
+        /*
+        这里如果不用huTool包去做反射异常校验的话，自己写代码会需要大量tryCatch
+         */
+        ContentModel contentModel = ReflectUtil.newInstance(contentModelClass);
         for (Field field : fields) {
             String origin = jsonObject.getString(field.getName());
+//            进行替换，把反射对象设置对应的内容
+            if (!origin.isEmpty()) {
+                String resultValue = ContentHolderUtil.replacePlaceholder(origin, variables);
+                //获得后如果是bean对象就进行转换成bean，如果不是保持原来的字符串
+                Object resultObj = JSONUtil.isJsonObj(resultValue)
+                        ? JSONUtil.toBean(resultValue, field.getType()) : resultValue;
+
+            }
 
         }
-
+//        如果存在url进行拼装url方便后续追踪
+        String url = (String) ReflectUtil.getFieldValue(contentModel, LINK_NAME);
+        if (CharSequenceUtil.isNotBlank(url)) {
+            String resultUrl = TaskInfoUtils.generateUrl(url, messageTemplate.getId(), messageTemplate.getTemplateType());
+            ReflectUtil.setFieldValue(contentModel, LINK_NAME, resultUrl);
+        }
+        return contentModel;
     }
 }

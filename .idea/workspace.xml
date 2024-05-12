@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="定义枚举类ChannelType，并且对不同的渠道分别建立模型，都去实现对应的变量，定义了枚举接口，让其他枚举继承后重写必有得code和description方法&#10;在assembleTaskInfoList组装参数，目前到替换占位符，这块用spring的api去实现">
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="对占位符理解后，首先要去PropertyPlaceholderHelper，然后构造的时候传入对应的前后缀，然后执行replacePlaceholders，传入origin，还有PlaceholderResolver接口，这个可以拿一个类去实现，这里存疑对Object类的无参构造，重写resolvePlaceholder保证map里面有占位符要的数据是一样的，返回实际的值，最后在replacePlaceholders完成替换">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ContentHolderUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ContentHolderUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAssembleBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAssembleBusiness.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +153,7 @@
       <workItem from="1715341398581" duration="6518000" />
       <workItem from="1715411478714" duration="6834000" />
       <workItem from="1715435534269" duration="6601000" />
-      <workItem from="1715499587658" duration="7950000" />
+      <workItem from="1715499587658" duration="9190000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -288,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715505824969</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="对占位符理解后，首先要去PropertyPlaceholderHelper，然后构造的时候传入对应的前后缀，然后执行replacePlaceholders，传入origin，还有PlaceholderResolver接口，这个可以拿一个类去实现，这里存疑对Object类的无参构造，重写resolvePlaceholder保证map里面有占位符要的数据是一样的，返回实际的值，最后在replacePlaceholders完成替换">
+      <created>1715508078358</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1715508078358</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +334,8 @@
     <MESSAGE value="为责任量配置业务的进行，配置类PipeLine，好像要加扫描包路径才能扫到对应的业务包，这里也为项目启动的时候映射出code和对应ProcessTemplate，由Controller后去对应的ProcessTemplate后进行所运用的业务链子，总的来说就是启动组装对应的链子。&#10;做了请求的前置检查用stream流" />
     <MESSAGE value="常量设计，引入jpa的相关用法实现在MessageTemplateDao里面，以及TaskInfo和对应的MessTemplate数据进行组装，运用Optional类型，优化jdk8前比较丑陋的写法，衍生出多种api" />
     <MESSAGE value="定义枚举类ChannelType，并且对不同的渠道分别建立模型，都去实现对应的变量，定义了枚举接口，让其他枚举继承后重写必有得code和description方法&#10;在assembleTaskInfoList组装参数，目前到替换占位符，这块用spring的api去实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="定义枚举类ChannelType，并且对不同的渠道分别建立模型，都去实现对应的变量，定义了枚举接口，让其他枚举继承后重写必有得code和description方法&#10;在assembleTaskInfoList组装参数，目前到替换占位符，这块用spring的api去实现" />
+    <MESSAGE value="对占位符理解后，首先要去PropertyPlaceholderHelper，然后构造的时候传入对应的前后缀，然后执行replacePlaceholders，传入origin，还有PlaceholderResolver接口，这个可以拿一个类去实现，这里存疑对Object类的无参构造，重写resolvePlaceholder保证map里面有占位符要的数据是一样的，返回实际的值，最后在replacePlaceholders完成替换" />
+    <option name="LAST_COMMIT_MESSAGE" value="对占位符理解后，首先要去PropertyPlaceholderHelper，然后构造的时候传入对应的前后缀，然后执行replacePlaceholders，传入origin，还有PlaceholderResolver接口，这个可以拿一个类去实现，这里存疑对Object类的无参构造，重写resolvePlaceholder保证map里面有占位符要的数据是一样的，返回实际的值，最后在replacePlaceholders完成替换" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
