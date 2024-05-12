@@ -14,6 +14,7 @@ import com.common.enums.RespStatusEnum;
 import com.common.pipeline.BusinessProcess;
 import com.common.pipeline.ProcessContext;
 import com.common.vo.BasicResultVo;
+import com.google.common.base.Throwables;
 import com.hwoss.suport.dao.MessageTemplateDao;
 import com.hwoss.suport.domain.MessageTemplate;
 import com.hwoss.suport.utils.ContentHolderUtil;
@@ -52,16 +53,20 @@ public class SendAssembleBusiness implements BusinessProcess<SendTaskModel> {
         Long messageTemplateId = sendTaskModel.getMessageTemplateId();
 
         //这里用jdk8后的Optional来隐式的对可能为null进行操作，衍生出的方法采用lambda表达式进行解决
-        Optional<MessageTemplate> messageTemplate = messageTemplateDao.findById(messageTemplateId);
-        if (!messageTemplate.isPresent() || messageTemplate.get().getIsDeleted().equals(CommonConstant.FALSE)) {
-            context.setIsBreak(true).setResponse(BasicResultVo.fail(RespStatusEnum.TEMPLATE_NOT_FOUND));
-            return;
-        }
+        try {
+            Optional<MessageTemplate> messageTemplate = messageTemplateDao.findById(messageTemplateId);
+            if (!messageTemplate.isPresent() || messageTemplate.get().getIsDeleted().equals(CommonConstant.FALSE)) {
+                context.setIsBreak(true).setResponse(BasicResultVo.fail(RespStatusEnum.TEMPLATE_NOT_FOUND));
+                return;
+            }
 //            获取组装后的任务列表
-        assembleTaskInfoList(sendTaskModel, messageTemplate.get());
-
+            List<TaskInfo> taskInfos = assembleTaskInfoList(sendTaskModel, messageTemplate.get());
+            sendTaskModel.setTaskInfoList(taskInfos);
+        } catch (Exception e) {
+            context.setIsBreak(true).setResponse(BasicResultVo.fail(RespStatusEnum.SERVICE_ERROR));
+            log.error("assemble task fail! templateId:{}, e:{}", messageTemplateId, Throwables.getStackTraceAsString(e));
+        }
     }
-
     private List<TaskInfo> assembleTaskInfoList(SendTaskModel sendTaskModel, MessageTemplate messageTemplate) {
         List<TaskInfo> taskInfoList = new ArrayList<>();
         List<MessageParam> messageParamList = sendTaskModel.getMessageParamList();

@@ -33,5 +33,5 @@ public class SendTaskModel implements ProcessModel {
     /**
      * 发送任务的信息
      */
-    private List<TaskInfo> taskInfo;
+    private List<TaskInfo> taskInfoList;
 }
