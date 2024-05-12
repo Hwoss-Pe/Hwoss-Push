@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import service.impl.business.SendPreCheckBusiness;
+import service.impl.business.SendAfterCheckBusiness;
 import service.api.enums.BusinessCode;
+import service.impl.business.SendPreCheckBusiness;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -22,8 +23,13 @@ import java.util.Map;
 @Configuration
 public class PipeLineConfig {
 
+
     @Autowired
-    private SendPreCheckBusiness sendPreCheckBusiness;
+    private SendPreCheckBusiness sendPreCheckAction;
+    @Autowired
+    private SendPreCheckBusiness sendAssembleAction;
+    @Autowired
+    private SendAfterCheckBusiness sendAfterCheckAction;
 
     /**
      * 普通发送执行流程
@@ -40,7 +46,7 @@ public class PipeLineConfig {
         ProcessTemplate processTemplate = new ProcessTemplate();
 //        设置具体业务
         processTemplate.setBusinessProcessList(Arrays.asList(
-                sendPreCheckBusiness
+                sendPreCheckAction, sendAssembleAction, sendAfterCheckAction
 
         ));
         return processTemplate;

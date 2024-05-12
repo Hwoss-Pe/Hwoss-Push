@@ -29,6 +29,8 @@ public class ProcessController {
         }
 //遍历节点流程
         List<? extends BusinessProcess<?>> businessProcessList = templateConfig.get(context.getCode()).getBusinessProcessList();
+//
+//        注意这里一直是对同一个对象的引用，void方法传入的是对象，所以context值会随着循环一直传递下去
         for (BusinessProcess<?> businessProcess : businessProcessList) {
             businessProcess.process(context);
 //            通过设置break来结束责任链的运行

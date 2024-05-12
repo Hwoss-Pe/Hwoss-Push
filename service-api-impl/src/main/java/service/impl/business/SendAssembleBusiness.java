@@ -115,9 +115,7 @@ public class SendAssembleBusiness implements BusinessProcess<SendTaskModel> {
                 //获得后如果是bean对象就进行转换成bean，如果不是保持原来的字符串
                 Object resultObj = JSONUtil.isJsonObj(resultValue)
                         ? JSONUtil.toBean(resultValue, field.getType()) : resultValue;
-
             }
-
         }
 //        如果存在url进行拼装url方便后续追踪
         String url = (String) ReflectUtil.getFieldValue(contentModel, LINK_NAME);

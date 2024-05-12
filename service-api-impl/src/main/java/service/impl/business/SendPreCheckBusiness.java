@@ -48,7 +48,6 @@ public class SendPreCheckBusiness implements BusinessProcess<SendTaskModel> {
             context.setIsBreak(true).setResponse(BasicResultVo.fail(RespStatusEnum.TOO_MANY_REQUEST, RespStatusEnum.TOO_MANY_REQUEST.getMsg()));
             return;
         }
-
         sendTaskModel.setMessageParamList(resultMessageParamList);
     }
 }

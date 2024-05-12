@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="拼装参数SendAssembleBusiness写完,这里用hutool包去调用反射的工具，如果自己写的话需要大量反射的tryCatch出来，用ReflectUtil会好很多">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/IdType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAfterCheckAction.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="对接收者的数据进行正则校验">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAfterCheckAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAfterCheckBusiness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAssembleBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAssembleBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/domain/SendTaskModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/domain/SendTaskModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendPreCheckBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendPreCheckBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/config/PipeLineConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/config/PipeLineConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api/src/main/java/service/api/service/SendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api/src/main/java/service/api/service/SendService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +161,7 @@
       <workItem from="1715411478714" duration="6834000" />
       <workItem from="1715435534269" duration="6601000" />
       <workItem from="1715499587658" duration="9787000" />
-      <workItem from="1715519861479" duration="2620000" />
+      <workItem from="1715519861479" duration="5676000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -309,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715509320079</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="对接收者的数据进行正则校验">
+      <created>1715522836406</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1715522836406</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +359,8 @@
     <MESSAGE value="对占位符理解后，首先要去PropertyPlaceholderHelper，然后构造的时候传入对应的前后缀，然后执行replacePlaceholders，传入origin，还有PlaceholderResolver接口，这个可以拿一个类去实现，这里存疑对Object类的无参构造，重写resolvePlaceholder保证map里面有占位符要的数据是一样的，返回实际的值，最后在replacePlaceholders完成替换" />
     <MESSAGE value="拼装参数SendAssembleBusiness写完,这里用hutool包去调用反射的工具，如果自己写的话需要大量反射的tryCatch出来" />
     <MESSAGE value="拼装参数SendAssembleBusiness写完,这里用hutool包去调用反射的工具，如果自己写的话需要大量反射的tryCatch出来，用ReflectUtil会好很多" />
-    <option name="LAST_COMMIT_MESSAGE" value="拼装参数SendAssembleBusiness写完,这里用hutool包去调用反射的工具，如果自己写的话需要大量反射的tryCatch出来，用ReflectUtil会好很多" />
+    <MESSAGE value="对接收者的数据进行正则校验" />
+    <option name="LAST_COMMIT_MESSAGE" value="对接收者的数据进行正则校验" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
