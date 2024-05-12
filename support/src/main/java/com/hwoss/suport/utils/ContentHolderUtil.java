@@ -20,11 +20,12 @@ public class ContentHolderUtil {
     private static final String PLACE_HOLDER_SUFFIX = "}";
 
     /**
-     * Spring中的一个实用类，用于处理属性占位符替换
+     * Spring中的一个实用类PropertyPlaceholderHelper，用于处理属性占位符替换
      */
     private static final PropertyPlaceholderHelper PROPERTY_PLACEHOLDER_HELPER = new PropertyPlaceholderHelper(PLACE_HOLDER_PREFIX, PLACE_HOLDER_SUFFIX);
 
     public static String replacePlaceholder(String template, Map<String, String> variables) {
+//        这里执行替换操作
         return PROPERTY_PLACEHOLDER_HELPER.replacePlaceholders(template, new CustomPlaceholderResolver(template, variables));
     }
 
@@ -36,11 +37,17 @@ public class ContentHolderUtil {
         private final Map<String, String> variables;
 
         public CustomPlaceholderResolver(String template, Map<String, String> variables) {
+            //这里调用Object构造方法作用？
             super();
             this.template = template;
             this.variables = variables;
         }
 
+        /**
+         * @param placeholderName
+         * @return {@link String }
+         * 对替换前的校验数据，获取map里面有对应的属性值
+         */
         @Override
         public String resolvePlaceholder(String placeholderName) {
             if (Objects.isNull(variables)) {
