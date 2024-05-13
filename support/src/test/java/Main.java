@@ -1,4 +1,7 @@
+import com.hwoss.suport.mq.MqService;
+
 public class Main {
+
     //    public static void main(String[] args) {
 //        A a = new A(0,0);
 //        int x = 0;

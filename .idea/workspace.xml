@@ -4,13 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="对接收者的数据进行正则校验">
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="增加对应发送mq的样例，这里创建的mq配置类只进行发送，并没有使用@Listener去自动创建，因此进行原始构建，采用的是TopicQueue">
+      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendMQBusiness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/Contents/MessageQueuePipeline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/MqService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitMqAdminConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitSendMqServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAfterCheckAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAfterCheckBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAssembleBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendAssembleBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendPreCheckBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/business/SendPreCheckBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/config/PipeLineConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/service/impl/config/PipeLineConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api/src/main/java/service/api/service/SendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api/src/main/java/service/api/service/SendService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/logs/error-2024-05-07.0.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/logs/info-2024-05-07.0.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/dao/MessageTemplateDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/dao/MessageTemplateDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/test/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/test/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/web/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/web/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/com/web/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/com/web/Test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -66,13 +75,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="SELECTIVE" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../austin-master/austin-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Facet" />
+    <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.16528928" />
     <property name="settings.editor.selected.configurable" value="com.star.easydoc.view.settings.kdoc.template.KtClassSettingsConfigurable" />
@@ -87,7 +96,7 @@
       <recent name="com.web" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.sendsms">
+  <component name="RunManager" selected="Spring Boot.MessageApplication">
     <configuration name="sendsms" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="demo.sendsms" />
       <module name="web" />
@@ -101,15 +110,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,8 +136,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.sendsms" />
         <item itemvalue="Spring Boot.MessageApplication" />
+        <item itemvalue="应用程序.sendsms" />
       </list>
     </recent_temporary>
   </component>
@@ -161,7 +168,10 @@
       <workItem from="1715411478714" duration="6834000" />
       <workItem from="1715435534269" duration="6601000" />
       <workItem from="1715499587658" duration="9787000" />
-      <workItem from="1715519861479" duration="5676000" />
+      <workItem from="1715519861479" duration="6369000" />
+      <workItem from="1715582946582" duration="3383000" />
+      <workItem from="1715586495864" duration="2239000" />
+      <workItem from="1715606126755" duration="1918000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -317,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715522836406</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="整理自用">
+      <created>1715526102379</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1715526102379</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +377,10 @@
     <MESSAGE value="拼装参数SendAssembleBusiness写完,这里用hutool包去调用反射的工具，如果自己写的话需要大量反射的tryCatch出来" />
     <MESSAGE value="拼装参数SendAssembleBusiness写完,这里用hutool包去调用反射的工具，如果自己写的话需要大量反射的tryCatch出来，用ReflectUtil会好很多" />
     <MESSAGE value="对接收者的数据进行正则校验" />
-    <option name="LAST_COMMIT_MESSAGE" value="对接收者的数据进行正则校验" />
+    <MESSAGE value="整理自用" />
+    <MESSAGE value="增加对应发送mq的样例，这里创建的mq配置类只进行发送，并没有使用@Listener去自动创建，因此进行原始构建，采用的是Topic交换机" />
+    <MESSAGE value="增加对应发送mq的样例，这里创建的mq配置类只进行发送，并没有使用@Listener去自动创建，因此进行原始构建，采用的是TopicQueue" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加对应发送mq的样例，这里创建的mq配置类只进行发送，并没有使用@Listener去自动创建，因此进行原始构建，采用的是TopicQueue" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
