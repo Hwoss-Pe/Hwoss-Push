@@ -53,7 +53,7 @@ public class SendAssembleBusiness implements BusinessProcess<SendTaskModel> {
         //这里用jdk8后的Optional来隐式的对可能为null进行操作，衍生出的方法采用lambda表达式进行解决
         try {
             Optional<MessageTemplate> messageTemplate = messageTemplateDao.findById(messageTemplateId);
-            if (!messageTemplate.isPresent() || messageTemplate.get().getIsDeleted().equals(CommonConstant.FALSE)) {
+            if (!messageTemplate.isPresent() || messageTemplate.get().getIsDeleted().equals(CommonConstant.TRUE)) {
                 context.setIsBreak(true).setResponse(BasicResultVo.fail(RespStatusEnum.TEMPLATE_NOT_FOUND));
                 return;
             }
@@ -83,7 +83,13 @@ public class SendAssembleBusiness implements BusinessProcess<SendTaskModel> {
                     .msgType(messageTemplate.getMsgType())
                     .contentModel(getContentModel(messageTemplate, messageParam))
                     .build();
+            taskInfoList.add(taskInfo);
+            if (CharSequenceUtil.isBlank(taskInfo.getBizId())) {
+                taskInfo.setBizId(taskInfo.getMessageId());
+            }
         }
+
+
         return taskInfoList;
     }
 
@@ -113,6 +119,7 @@ public class SendAssembleBusiness implements BusinessProcess<SendTaskModel> {
                 //获得后如果是bean对象就进行转换成bean，如果不是保持原来的字符串
                 Object resultObj = JSONUtil.isJsonObj(resultValue)
                         ? JSONUtil.toBean(resultValue, field.getType()) : resultValue;
+                ReflectUtil.setFieldValue(contentModel, field, resultObj);
             }
         }
 //        如果存在url进行拼装url方便后续追踪

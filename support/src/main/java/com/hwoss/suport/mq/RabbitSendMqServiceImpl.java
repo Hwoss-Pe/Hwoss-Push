@@ -24,7 +24,7 @@ public class RabbitSendMqServiceImpl implements MqService {
 
     @Override
     public void send(String topic, String jsonValue, String tagId) {
-        if (topic.equals(key)) {
+        if (topic.equals(exchangeName)) {
             //交换机，routingKey，值
             rabbitTemplate.convertAndSend(exchangeName, key, jsonValue);
         } else {

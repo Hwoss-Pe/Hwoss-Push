@@ -2,6 +2,7 @@ package com.hwoss.service.impl.config;
 
 import com.common.pipeline.ProcessController;
 import com.common.pipeline.ProcessTemplate;
+import com.hwoss.service.impl.business.SendAssembleBusiness;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -28,7 +29,7 @@ public class PipeLineConfig {
     @Autowired
     private SendPreCheckBusiness sendPreCheckAction;
     @Autowired
-    private SendPreCheckBusiness sendAssembleAction;
+    private SendAssembleBusiness sendAssembleAction;
     @Autowired
     private SendAfterCheckBusiness sendAfterCheckAction;
     @Autowired
