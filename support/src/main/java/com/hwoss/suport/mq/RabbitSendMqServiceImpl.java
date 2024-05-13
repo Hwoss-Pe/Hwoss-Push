@@ -15,8 +15,6 @@ import org.springframework.stereotype.Service;
 public class RabbitSendMqServiceImpl implements MqService {
     @Autowired
     private RabbitTemplate rabbitTemplate;
-    @Value("${hwoss.rabbitmq.topic.name}")
-    private String confTopic;
 
     @Value("${hwoss.rabbitmq.routing.key}")
     private String key;

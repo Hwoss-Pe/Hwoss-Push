@@ -201,7 +201,7 @@
             <!--            &lt;!&ndash;阿里云 钉钉 SDK&ndash;&gt;-->
             <!--            <dependency>-->
             <!--                <groupId>com.aliyun</groupId>-->
-            <!--                <artifactId>alibaba-dingtalk-service-sdk</artifactId>-->
+            <!--                <artifactId>alibaba-dingtalk-com.hwoss.service-sdk</artifactId>-->
             <!--                <version>2.0.0</version>-->
             <!--            </dependency>-->
 

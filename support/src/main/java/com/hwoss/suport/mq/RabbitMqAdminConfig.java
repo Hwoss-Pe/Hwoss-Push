@@ -16,8 +16,6 @@ public class RabbitMqAdminConfig {
     @Value("${hwoss.rabbitmq.exchange.name}")
     private String exchangeName;
 
-    @Value("${hwoss.rabbitmq.routing.key}")
-    private String key;
 
     @Bean
     public Queue testQueue() {
@@ -31,6 +29,6 @@ public class RabbitMqAdminConfig {
 
     @Bean
     public Binding bind(Queue Queue1, TopicExchange topicExchange) {
-        return BindingBuilder.bind(Queue1).to(topicExchange).with(key);
+        return BindingBuilder.bind(Queue1).to(topicExchange).with(topic);
     }
 }
