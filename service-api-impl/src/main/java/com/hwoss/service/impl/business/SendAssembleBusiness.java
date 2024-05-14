@@ -115,11 +115,15 @@ public class SendAssembleBusiness implements BusinessProcess<SendTaskModel> {
             String origin = jsonObject.getString(field.getName());
 //            进行替换，把反射对象设置对应的内容
             if (!origin.isEmpty()) {
+                //会去对比数据库字段是否是占位符，是的话就替代，不是就保持数据库的数据不变
                 String resultValue = ContentHolderUtil.replacePlaceholder(origin, variables);
                 //获得后如果是bean对象就进行转换成bean，如果不是保持原来的字符串
-                Object resultObj = JSONUtil.isJsonObj(resultValue)
-                        ? JSONUtil.toBean(resultValue, field.getType()) : resultValue;
-                ReflectUtil.setFieldValue(contentModel, field, resultObj);
+                if (JSONUtil.isJsonObj(resultValue)) {
+                    {
+                        JSONUtil.toBean(resultValue, field.getType());
+                    }
+                }
+                ReflectUtil.setFieldValue(contentModel, field, resultValue);
             }
         }
 //        如果存在url进行拼装url方便后续追踪
