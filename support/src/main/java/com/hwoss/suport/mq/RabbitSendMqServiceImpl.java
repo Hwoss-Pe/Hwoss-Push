@@ -16,20 +16,14 @@ public class RabbitSendMqServiceImpl implements MqService {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @Value("${hwoss.rabbitmq.routing.key}")
-    private String key;
     @Value("${hwoss.rabbitmq.exchange.name}")
     private String exchangeName;
 
 
     @Override
-    public void send(String topic, String jsonValue, String tagId) {
-        if (topic.equals(exchangeName)) {
-            //交换机，routingKey，值
-            rabbitTemplate.convertAndSend(exchangeName, key, jsonValue);
-        } else {
-            log.error("Error sending Rabbit topic:{},confTopic:{}", topic, key);
-        }
+    public void send(String key, String jsonValue, String tagId) {
+        //交换机，routingKey，值
+        rabbitTemplate.convertAndSend(exchangeName, key, jsonValue);
     }
 
     @Override

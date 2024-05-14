@@ -298,3 +298,211 @@
 2024-05-14 14:46:25.153 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-05-14 14:46:25.157 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown initiated...
 2024-05-14 14:46:25.160 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown completed.
+2024-05-14 16:41:55.774 [main] INFO  com.hwoss.MessageApplication - Starting MessageApplication using Java 1.8.0_382 on LAPTOP-OG6LR54A with PID 25620 (D:\messsagePushing\web\target\classes started by Hwoss in D:\messsagePushing)
+2024-05-14 16:41:55.777 [main] INFO  com.hwoss.MessageApplication - No active profile set, falling back to default profiles: default
+2024-05-14 16:41:57.102 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:41:57.103 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14 16:41:57.221 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 1 JPA repository interfaces.
+2024-05-14 16:41:57.246 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:41:57.248 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-14 16:41:57.269 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hwoss.suport.dao.MessageTemplateDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2024-05-14 16:41:57.269 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-05-14 16:41:58.188 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-05-14 16:41:58.199 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-14 16:41:58.200 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-14 16:41:58.200 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2024-05-14 16:41:58.308 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-14 16:41:58.308 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2485 ms
+2024-05-14 16:41:58.482 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Starting...
+2024-05-14 16:41:59.163 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Start completed.
+2024-05-14 16:41:59.221 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14 16:41:59.302 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-05-14 16:41:59.548 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-05-14 16:41:59.793 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-05-14 16:42:00.648 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-05-14 16:42:00.663 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14 16:42:01.389 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14 16:42:01.393 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown initiated...
+2024-05-14 16:42:01.540 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown completed.
+2024-05-14 16:42:01.544 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2024-05-14 16:42:01.557 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-05-14 16:43:32.137 [main] INFO  com.hwoss.MessageApplication - Starting MessageApplication using Java 1.8.0_382 on LAPTOP-OG6LR54A with PID 27184 (D:\messsagePushing\web\target\classes started by Hwoss in D:\messsagePushing)
+2024-05-14 16:43:32.140 [main] INFO  com.hwoss.MessageApplication - No active profile set, falling back to default profiles: default
+2024-05-14 16:43:33.087 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:43:33.087 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14 16:43:33.177 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 1 JPA repository interfaces.
+2024-05-14 16:43:33.192 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:43:33.194 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-14 16:43:33.209 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hwoss.suport.dao.MessageTemplateDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2024-05-14 16:43:33.209 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-05-14 16:43:33.967 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-05-14 16:43:33.977 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-14 16:43:33.977 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-14 16:43:33.977 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2024-05-14 16:43:34.082 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-14 16:43:34.082 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1899 ms
+2024-05-14 16:43:34.230 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Starting...
+2024-05-14 16:44:09.430 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14 16:44:09.495 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-05-14 16:44:09.715 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-05-14 16:44:09.899 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Starting...
+2024-05-14 16:44:44.982 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2024-05-14 16:44:44.995 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-05-14 16:55:21.050 [main] INFO  com.hwoss.MessageApplication - Starting MessageApplication using Java 1.8.0_382 on LAPTOP-OG6LR54A with PID 21568 (D:\messsagePushing\web\target\classes started by Hwoss in D:\messsagePushing)
+2024-05-14 16:55:21.054 [main] INFO  com.hwoss.MessageApplication - No active profile set, falling back to default profiles: default
+2024-05-14 16:55:22.723 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:55:22.723 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14 16:55:22.838 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 1 JPA repository interfaces.
+2024-05-14 16:55:22.863 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:55:22.864 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-14 16:55:22.886 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hwoss.suport.dao.MessageTemplateDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2024-05-14 16:55:22.904 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2024-05-14 16:55:23.804 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-05-14 16:55:23.815 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-14 16:55:23.817 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-14 16:55:23.817 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2024-05-14 16:55:23.976 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-14 16:55:23.976 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2865 ms
+2024-05-14 16:55:24.151 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Starting...
+2024-05-14 16:55:24.838 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Start completed.
+2024-05-14 16:55:24.901 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14 16:55:24.985 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-05-14 16:55:25.217 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-05-14 16:55:25.457 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-05-14 16:55:26.271 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-05-14 16:55:26.288 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14 16:55:27.214 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14 16:55:27.218 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown initiated...
+2024-05-14 16:55:27.570 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown completed.
+2024-05-14 16:55:27.572 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2024-05-14 16:55:27.584 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-05-14 16:56:22.519 [main] INFO  com.hwoss.MessageApplication - Starting MessageApplication using Java 1.8.0_382 on LAPTOP-OG6LR54A with PID 4352 (D:\messsagePushing\web\target\classes started by Hwoss in D:\messsagePushing)
+2024-05-14 16:56:22.522 [main] INFO  com.hwoss.MessageApplication - No active profile set, falling back to default profiles: default
+2024-05-14 16:56:23.766 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:56:23.766 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14 16:56:23.890 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 111 ms. Found 1 JPA repository interfaces.
+2024-05-14 16:56:23.912 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:56:23.914 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-14 16:56:23.932 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hwoss.suport.dao.MessageTemplateDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2024-05-14 16:56:23.932 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-05-14 16:56:24.914 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-05-14 16:56:24.924 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-14 16:56:24.925 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-14 16:56:24.925 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2024-05-14 16:56:25.035 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-14 16:56:25.035 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2465 ms
+2024-05-14 16:56:25.243 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Starting...
+2024-05-14 16:56:25.903 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Start completed.
+2024-05-14 16:56:25.963 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14 16:56:26.043 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-05-14 16:56:26.233 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-05-14 16:56:26.419 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-05-14 16:56:27.259 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-05-14 16:56:27.278 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14 16:56:27.584 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14 16:56:27.588 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown initiated...
+2024-05-14 16:56:27.933 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown completed.
+2024-05-14 16:56:27.935 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2024-05-14 16:56:27.947 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-05-14 16:56:55.188 [main] INFO  com.hwoss.MessageApplication - Starting MessageApplication using Java 1.8.0_382 on LAPTOP-OG6LR54A with PID 4812 (D:\messsagePushing\web\target\classes started by Hwoss in D:\messsagePushing)
+2024-05-14 16:56:55.191 [main] INFO  com.hwoss.MessageApplication - No active profile set, falling back to default profiles: default
+2024-05-14 16:56:56.273 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:56:56.274 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14 16:56:56.359 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 1 JPA repository interfaces.
+2024-05-14 16:56:56.382 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:56:56.383 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-14 16:56:56.400 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hwoss.suport.dao.MessageTemplateDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2024-05-14 16:56:56.400 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-05-14 16:56:57.170 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-05-14 16:56:57.181 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-14 16:56:57.181 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-14 16:56:57.181 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2024-05-14 16:56:57.357 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-14 16:56:57.357 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2122 ms
+2024-05-14 16:56:57.510 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Starting...
+2024-05-14 16:56:58.119 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Start completed.
+2024-05-14 16:56:58.168 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14 16:56:58.220 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-05-14 16:56:58.382 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-05-14 16:56:58.520 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-05-14 16:56:59.135 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-05-14 16:56:59.149 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14 16:57:01.454 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-14 16:57:01.476 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-14 16:57:01.795 [main] INFO  com.hwoss.MessageApplication - Started MessageApplication in 6.998 seconds (JVM running for 8.469)
+2024-05-14 16:57:12.832 [main] INFO  com.hwoss.MessageApplication - Starting MessageApplication using Java 1.8.0_382 on LAPTOP-OG6LR54A with PID 24636 (D:\messsagePushing\web\target\classes started by Hwoss in D:\messsagePushing)
+2024-05-14 16:57:12.836 [main] INFO  com.hwoss.MessageApplication - No active profile set, falling back to default profiles: default
+2024-05-14 16:57:14.041 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:57:14.042 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14 16:57:14.164 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 1 JPA repository interfaces.
+2024-05-14 16:57:14.188 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 16:57:14.189 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-14 16:57:14.206 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hwoss.suport.dao.MessageTemplateDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2024-05-14 16:57:14.206 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-05-14 16:57:15.129 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-05-14 16:57:15.142 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-14 16:57:15.143 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-14 16:57:15.143 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2024-05-14 16:57:15.257 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-14 16:57:15.257 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2365 ms
+2024-05-14 16:57:15.448 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Starting...
+2024-05-14 16:57:16.112 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Start completed.
+2024-05-14 16:57:16.173 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14 16:57:16.255 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-05-14 16:57:16.467 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-05-14 16:57:16.646 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-05-14 16:57:17.563 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-05-14 16:57:17.585 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14 16:57:20.919 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-14 16:57:20.954 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-14 16:57:21.402 [main] INFO  com.hwoss.MessageApplication - Started MessageApplication in 9.018 seconds (JVM running for 10.727)
+2024-05-14 16:58:31.417 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14 16:58:31.417 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-14 16:58:31.419 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-05-14 16:58:32.272 [http-nio-8080-exec-1] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [120.55.194.151:5672]
+2024-05-14 16:58:32.490 [http-nio-8080-exec-1] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#38c10190:0/SimpleConnection@7359a452 [delegate=amqp://admin@120.55.194.151:5672/bthost, localPort= 54122]
+2024-05-14 17:01:52.912 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14 17:01:52.916 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown initiated...
+2024-05-14 17:01:52.921 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown completed.
+2024-05-14 17:05:41.118 [main] INFO  com.hwoss.MessageApplication - Starting MessageApplication using Java 1.8.0_382 on LAPTOP-OG6LR54A with PID 14000 (D:\messsagePushing\web\target\classes started by Hwoss in D:\messsagePushing)
+2024-05-14 17:05:41.121 [main] INFO  com.hwoss.MessageApplication - No active profile set, falling back to default profiles: default
+2024-05-14 17:05:42.598 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 17:05:42.599 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-14 17:05:42.725 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 112 ms. Found 1 JPA repository interfaces.
+2024-05-14 17:05:42.745 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-05-14 17:05:42.747 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-05-14 17:05:42.764 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.hwoss.suport.dao.MessageTemplateDao. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2024-05-14 17:05:42.765 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2024-05-14 17:05:43.788 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-05-14 17:05:43.802 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-14 17:05:43.802 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-05-14 17:05:43.803 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.54]
+2024-05-14 17:05:43.931 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-05-14 17:05:43.931 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2759 ms
+2024-05-14 17:05:44.170 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Starting...
+2024-05-14 17:05:44.859 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Start completed.
+2024-05-14 17:05:44.915 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-14 17:05:44.992 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-05-14 17:05:45.203 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-05-14 17:05:45.435 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-05-14 17:05:46.265 [main] INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-05-14 17:05:46.282 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14 17:05:49.236 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-14 17:05:49.264 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-14 17:05:49.659 [main] INFO  com.hwoss.MessageApplication - Started MessageApplication in 8.98 seconds (JVM running for 10.758)
+2024-05-14 17:05:53.673 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-14 17:05:53.674 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-05-14 17:05:53.677 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-05-14 17:05:54.327 [http-nio-8080-exec-1] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [120.55.194.151:5672]
+2024-05-14 17:05:54.526 [http-nio-8080-exec-1] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#43deba42:0/SimpleConnection@47c73212 [delegate=amqp://admin@120.55.194.151:5672/bthost, localPort= 54561]
+2024-05-14 17:06:18.040 [SpringApplicationShutdownHook] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-14 17:06:18.044 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown initiated...
+2024-05-14 17:06:18.050 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariCP - Shutdown completed.

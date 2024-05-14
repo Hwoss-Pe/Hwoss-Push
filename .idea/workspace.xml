@@ -4,10 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="业务链路基本走通，并且正确发送到MQ，查正则替换数据那块没查">
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="单个消息发送业务完成">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/domain/RecallTaskInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/recall/RecallAssembleBusiness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/recall/RecallMQBusiness.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/domain/RecallTaskModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/RecallServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/domain/SimpleTaskInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/domain/SimpleTaskInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/SendAssembleBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/SendAssembleBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/SendAfterCheckBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAfterCheckBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/SendAssembleBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAssembleBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/SendMQBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendMQBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/SendPreCheckBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendPreCheckBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/config/PipeLineConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/config/PipeLineConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/SendServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/SendServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/pojo/SendRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/pojo/SendRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitMqAdminConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitMqAdminConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitSendMqServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitSendMqServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/SendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/SendController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
     </list>
@@ -47,7 +63,7 @@
     <setting file="file://$PROJECT_DIR$/service-api/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/config/PipeLineConfig.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/SendAfterCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAfterCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/service/SendService.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/SendServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
@@ -168,7 +184,8 @@
       <workItem from="1715586495864" duration="2239000" />
       <workItem from="1715606126755" duration="4906000" />
       <workItem from="1715611119758" duration="6153000" />
-      <workItem from="1715667400810" duration="1836000" />
+      <workItem from="1715667400810" duration="7319000" />
+      <workItem from="1715676900901" duration="615000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -352,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715617319649</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="单个消息发送业务完成">
+      <created>1715669284205</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1715669284205</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,7 +424,8 @@
     <MESSAGE value="增加对应发送mq的样例，这里创建的mq配置类只进行发送，并没有使用@Listener去自动创建，因此进行原始构建，采用的是TopicQueue" />
     <MESSAGE value="这里对于挎包引入对应的自动装配，采用包名一样，然后在配置类进行扫描包设置对应的路径就行" />
     <MESSAGE value="业务链路基本走通，并且正确发送到MQ，查正则替换数据那块没查" />
-    <option name="LAST_COMMIT_MESSAGE" value="业务链路基本走通，并且正确发送到MQ，查正则替换数据那块没查" />
+    <MESSAGE value="单个消息发送业务完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="单个消息发送业务完成" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

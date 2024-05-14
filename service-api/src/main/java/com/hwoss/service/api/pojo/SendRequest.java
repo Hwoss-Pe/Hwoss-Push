@@ -39,9 +39,4 @@ public class SendRequest {
      */
     private List<String> recallList;
 
-    public SendRequest(String code, Long messageTemplateId, MessageParam messageParam) {
-        this.code = code;
-        this.messageTemplateId = messageTemplateId;
-        this.messageParam = messageParam;
-    }
 }

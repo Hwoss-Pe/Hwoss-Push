@@ -2,15 +2,17 @@ package com.hwoss.service.impl.config;
 
 import com.common.pipeline.ProcessController;
 import com.common.pipeline.ProcessTemplate;
-import com.hwoss.service.impl.business.SendAssembleBusiness;
+import com.hwoss.service.impl.business.recall.RecallAssembleBusiness;
+import com.hwoss.service.impl.business.recall.RecallMQBusiness;
+import com.hwoss.service.impl.business.send.SendAssembleBusiness;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import com.hwoss.service.impl.business.SendAfterCheckBusiness;
+import com.hwoss.service.impl.business.send.SendAfterCheckBusiness;
 import com.hwoss.service.api.enums.BusinessCode;
-import com.hwoss.service.impl.business.SendMQBusiness;
-import com.hwoss.service.impl.business.SendPreCheckBusiness;
+import com.hwoss.service.impl.business.send.SendMQBusiness;
+import com.hwoss.service.impl.business.send.SendPreCheckBusiness;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -34,6 +36,10 @@ public class PipeLineConfig {
     private SendAfterCheckBusiness sendAfterCheckAction;
     @Autowired
     private SendMQBusiness sendMQBusiness;
+    @Autowired
+    private RecallAssembleBusiness recallAssembleBusiness;
+    @Autowired
+    private RecallMQBusiness recallMQBusiness;
 
     /**
      * 普通发送执行流程
@@ -55,6 +61,15 @@ public class PipeLineConfig {
         return processTemplate;
     }
 
+    @Bean("commonRecallTemplate")
+    public ProcessTemplate commonRecallTemplate() {
+        ProcessTemplate processTemplate = new ProcessTemplate();
+//        设置具体业务
+        processTemplate.setBusinessProcessList(Arrays.asList(
+                recallAssembleBusiness, recallMQBusiness
+        ));
+        return processTemplate;
+    }
 
     //    启动的时候注入并且映射里面的mapConfig传入对应的template
     @Bean
@@ -62,7 +77,7 @@ public class PipeLineConfig {
         ProcessController processController = new ProcessController();
         Map<String, ProcessTemplate<?>> templateConfig = new HashMap<>(4);
         templateConfig.put(BusinessCode.SEND.getCode(), commonSendTemplate());
-//        templateConfig.put(BusinessCode.RECALL.getCode(), recallMessageTemplate);
+        templateConfig.put(BusinessCode.RECALL.getCode(), commonRecallTemplate());
         processController.setTemplateConfig(templateConfig);
         return processController;
     }

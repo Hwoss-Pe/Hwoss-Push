@@ -6,7 +6,7 @@ import lombok.*;
 /**
  * @author Hwoss
  * @date 2024/05/10
- * 调用发送接口成功后返回对应的信息，用于查看下发情况
+ * 调用发送接口成功后返回对应的信息，用于查看下发情况,封装下发信息
  */
 @AllArgsConstructor
 @NoArgsConstructor

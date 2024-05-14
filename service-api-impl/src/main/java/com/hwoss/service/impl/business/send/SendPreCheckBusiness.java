@@ -1,4 +1,4 @@
-package com.hwoss.service.impl.business;
+package com.hwoss.service.impl.business.send;
 
 import cn.hutool.core.text.StrPool;
 import com.common.constant.FuncConstant;
