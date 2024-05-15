@@ -4,23 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="kafka测试，kafka的接入思路是一个topic多个消费组去消费，然后再去开线程池">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/constant/ThreadPoolConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/domain/LogParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/EnumsUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/MessageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/ConsumerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/utils/GroupIdMappingUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/config/ThreadPoolExecutorShutdownDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ThreadPoolUtils.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="增加线程池配置类，把线程池交给spring管理进行优雅关闭&#10;编写一点消费类service">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/enums/ChannelType.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/ChannelType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/enums/IdType.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/IdType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/enums/PowerfulEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/PowerfulEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/ConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/ConsumerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/support/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/support/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ThreadPoolUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ThreadPoolUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
     </list>
@@ -56,16 +49,29 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAssembleBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/SendController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/MessageApplication.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/ConsumerService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/config/ThreadPoolExecutorShutdownDefinition.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/handler/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/config/PipeLineConfig.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAfterCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendPreCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/service/SendService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$MAVEN_REPOSITORY$/de/siegmar/logback-gelf/3.0.0/logback-gelf-3.0.0.pom" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAfterCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ThreadPoolUtils.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/SendServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/SendController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendMQBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/service/SendService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ContentHolderUtil.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/TaskInfoUtils.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2g5ydCZt57OWtc0CtrY6Whz3kIQ" />
   <component name="ProjectLevelVcsManager">
@@ -77,7 +83,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -88,16 +98,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="SELECTIVE" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../austin-master/austin-master" />
+    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/io/github/lyh200" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="问题" />
+    <property name="project.structure.last.edited" value="库" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2617801" />
-    <property name="settings.editor.selected.configurable" value="com.star.easydoc.view.settings.kdoc.template.KtClassSettingsConfigurable" />
+    <property name="project.structure.side.proportion" value="0.5274869" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReactorSettings">
@@ -186,6 +196,11 @@
       <workItem from="1715676900901" duration="1037000" />
       <workItem from="1715700483053" duration="37000" />
       <workItem from="1715762648351" duration="11818000" />
+      <workItem from="1715786427148" duration="1193000" />
+      <workItem from="1715787680709" duration="374000" />
+      <workItem from="1715788104080" duration="159000" />
+      <workItem from="1715788286870" duration="61000" />
+      <workItem from="1715788374459" duration="2140000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -390,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715773812599</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="增加线程池配置类，把线程池交给spring管理进行优雅关闭&#10;编写一点消费类service">
+      <created>1715786743088</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1715786743088</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +437,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="lombok依赖修正" />
     <MESSAGE value="增加日志框架，xml文件还没读取" />
     <MESSAGE value="修改日志不输出，springProfile全责" />
     <MESSAGE value="连接数据库用5.7，阿里云服务器配置，并且必须注释掉dtp动态线程池的相关依赖" />
@@ -440,7 +461,8 @@
     <MESSAGE value="单个消息发送业务完成" />
     <MESSAGE value="消息撤回下发到mq完成" />
     <MESSAGE value="kafka测试，kafka的接入思路是一个topic多个消费组去消费，然后再去开线程池" />
-    <option name="LAST_COMMIT_MESSAGE" value="kafka测试，kafka的接入思路是一个topic多个消费组去消费，然后再去开线程池" />
+    <MESSAGE value="增加线程池配置类，把线程池交给spring管理进行优雅关闭&#10;编写一点消费类service" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加线程池配置类，把线程池交给spring管理进行优雅关闭&#10;编写一点消费类service" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

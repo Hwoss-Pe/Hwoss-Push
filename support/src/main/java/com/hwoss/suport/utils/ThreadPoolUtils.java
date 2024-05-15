@@ -13,7 +13,7 @@ public class ThreadPoolUtils {
      * 把当前的线程池注册到动态线程池里面
      * 并且把线程池交给Spring管理进行一个优雅关闭
      */
-    public void register(DtpExecutor dtpExecutor) {
-
-    }
+//    public void register(DtpExecutor dtpExecutor) {
+//
+//    }
 }

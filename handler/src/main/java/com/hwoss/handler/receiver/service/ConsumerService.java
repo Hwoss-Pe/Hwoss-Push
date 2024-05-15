@@ -2,9 +2,13 @@ package com.hwoss.handler.receiver.service;
 
 import com.common.domain.RecallTaskInfo;
 import com.common.domain.TaskInfo;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Service
 public interface ConsumerService {
     /**
      * 从MQ拉到消息进行消费，发送消息

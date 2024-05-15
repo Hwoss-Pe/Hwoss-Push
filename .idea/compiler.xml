@@ -18,6 +18,9 @@
         <module name="service-api" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="messsagePushing" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

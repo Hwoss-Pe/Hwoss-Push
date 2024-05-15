@@ -177,12 +177,12 @@
             <!--                <version>${weixin-java}</version>-->
             <!--            </dependency>-->
 
-            <!--动态线程池引入-->
-            <!--            <dependency>-->
-            <!--                <groupId>io.github.lyh200</groupId>-->
-            <!--                <artifactId>dynamic-tp-spring-boot-starter-apollo</artifactId>-->
-            <!--                <version>1.0.2</version>-->
-            <!--            </dependency>-->
+            <!--            动态线程池引入-->
+            <dependency>
+                <groupId>io.github.lyh200</groupId>
+                <artifactId>dynamic-tp-spring-boot-starter-apollo</artifactId>
+                <version>1.0.2</version>
+            </dependency>
 
             <!--            &lt;!&ndash;企业微信第三方SDK&ndash;&gt;-->
             <!--            <dependency>-->
