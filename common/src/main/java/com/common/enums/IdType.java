@@ -50,7 +50,7 @@ public enum IdType implements PowerfulEnums {
     private final String description;
 
     @Override
-    public Integer Code() {
+    public Integer getCode() {
         return this.code;
     }
 }

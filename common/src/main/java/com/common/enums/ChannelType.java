@@ -109,7 +109,7 @@ public enum ChannelType implements PowerfulEnums {
     }
 
     @Override
-    public Integer Code() {
+    public Integer getCode() {
         return this.code;
     }
 

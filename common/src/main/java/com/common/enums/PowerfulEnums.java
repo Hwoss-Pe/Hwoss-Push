@@ -5,7 +5,7 @@ public interface PowerfulEnums {
      * @return {@link Integer }
      * 获取枚举的Code
      **/
-    Integer Code();
+    Integer getCode();
 
     /**
      * @return {@link String }

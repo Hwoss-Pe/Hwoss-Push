@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="消息撤回下发到mq完成">
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/KafkaConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/KafkaController.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="kafka测试，kafka的接入思路是一个topic多个消费组去消费，然后再去开线程池">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/constant/ThreadPoolConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/domain/LogParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/EnumsUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/MessageType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/ConsumerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/utils/GroupIdMappingUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/config/ThreadPoolExecutorShutdownDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ThreadPoolUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/enums/ChannelType.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/ChannelType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/enums/IdType.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/IdType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/enums/PowerfulEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/PowerfulEnums.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/support/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
     </list>
@@ -95,6 +105,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.common.enums" />
       <recent name="com.common.dto.model" />
       <recent name="com.web" />
     </key>
@@ -109,17 +120,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -185,7 +185,7 @@
       <workItem from="1715667400810" duration="7319000" />
       <workItem from="1715676900901" duration="1037000" />
       <workItem from="1715700483053" duration="37000" />
-      <workItem from="1715762648351" duration="5420000" />
+      <workItem from="1715762648351" duration="11818000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -383,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715677624794</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="kafka测试，kafka的接入思路是一个topic多个消费组去消费，然后再去开线程池">
+      <created>1715773812599</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1715773812599</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +415,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="创建项目结构引入Spring框架" />
     <MESSAGE value="lombok依赖修正" />
     <MESSAGE value="增加日志框架，xml文件还没读取" />
     <MESSAGE value="修改日志不输出，springProfile全责" />
@@ -433,7 +439,8 @@
     <MESSAGE value="业务链路基本走通，并且正确发送到MQ，查正则替换数据那块没查" />
     <MESSAGE value="单个消息发送业务完成" />
     <MESSAGE value="消息撤回下发到mq完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="消息撤回下发到mq完成" />
+    <MESSAGE value="kafka测试，kafka的接入思路是一个topic多个消费组去消费，然后再去开线程池" />
+    <option name="LAST_COMMIT_MESSAGE" value="kafka测试，kafka的接入思路是一个topic多个消费组去消费，然后再去开线程池" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
