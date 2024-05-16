@@ -5,6 +5,7 @@ import com.hwoss.handler.config.HandlerThreadPoolConfig;
 import com.hwoss.handler.utils.GroupIdMappingUtils;
 import com.hwoss.suport.utils.ThreadPoolUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -17,6 +18,7 @@ import java.util.concurrent.ExecutorService;
  * @date 2024/05/16
  * 用个map存储消息类型和对应的缓存关系
  */
+@Component
 public class TaskPendingHolder {
     //存储所有的 消费者组
     private static List<String> groupId = GroupIdMappingUtils.getAllGroupId();

@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="需要接入redis，但不知道是dtp还是log包需要强依赖于redis">
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="这里的mq策略就是一个队列来储存对应的信息，这个信息通过不同的key进行send和recall的分类，注册到请求头后对应消费端进行获取，然后再去执行逻辑">
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/impl/ConsumeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/service/impl/ConsumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/service/impl/ConsumeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/HandlerHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/HandlerHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/pending/TaskPendingHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/pending/TaskPendingHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/service/impl/ConsumeServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/recall/RecallMQBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/recall/RecallMQBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitSendMqServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitSendMqServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +131,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MessageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="web" />
       <extension name="coverage">
@@ -198,7 +210,7 @@
       <workItem from="1715788286870" duration="61000" />
       <workItem from="1715788374459" duration="2530000" />
       <workItem from="1715840733565" duration="12105000" />
-      <workItem from="1715864511576" duration="6944000" />
+      <workItem from="1715864511576" duration="8281000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -431,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715853123332</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="这里的mq策略就是一个队列来储存对应的信息，这个信息通过不同的key进行send和recall的分类，注册到请求头后对应消费端进行获取，然后再去执行逻辑">
+      <created>1715872368790</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1715872368790</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +475,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="创建BasicResultVo作为返回类型共业务层调用，并且数据从RespStatusEnum枚举里面获得&#10;这里优雅的写法就是链式调用多用this关键字进行当前对象的调用，以及以后这种含数据的最终返回类型用泛型解决不要去用Object" />
     <MESSAGE value="增加请求和响应的对象封装，请求通过去区分相响应内容区分撤回信息还是发送信息，对于对应的设置消息内容，区别好bizId和bussId，然后封装到SimpleTask进行执行，这样封装就保证请求一个然后扇出处理" />
     <MESSAGE value="责任链接口的实现设计，自定义责任链异常处理" />
     <MESSAGE value="编写责任链ProcessController，并且做预检查，也就是ProcessTemplate(某个责任链模板)，通过责任链去获取业务列表List&lt;BusinessProcess&gt;&#10;再去获取对应的模板获取业务列表然后执行，泛化问题不知道是否有影响代码运行，还没调试" />
@@ -481,7 +499,8 @@
     <MESSAGE value="记录bug：某些依赖必须在父工程引入后才能在子工程引入，比如&#10; &lt;dependency&gt;&#10;                            &lt;groupId&gt;io.github.lyh200&lt;/groupId&gt;&#10;                            &lt;artifactId&gt;dynamic-tp-spring-boot-starter-apollo&lt;/artifactId&gt;&#10;                            &lt;version&gt;1.0.2&lt;/version&gt;&#10;                        &lt;/dependency&gt;&#10;也可能是其他问题导致，恶心" />
     <MESSAGE value="做了两个map映射，一个是渠道和对应的处理器，一个是渠道和对应的线程池，在启动时就把对应的渠道消息和动态线程池都加进去&#10;这里补充动态线程池的做法，当创建对应的线程池后，交给Dtp进行注册，然后再给spring也注册，spring通过监听关闭事件来进行处理优雅关闭&#10;然后在TaskPipelineConfig大致定义了handler处理类责任链模式逻辑，注意引入不同的ProcessController，通过不同的业务，来指定引入不同的bean，然后封装好对应的业务逻辑，然后定义多线程消费对应的数据Task&#10;业务逻辑就是启动的时候注册多个ProcessController，进行map的多层映射，然后在service引入不同的对象，就可以执行不同逻辑&#10;&#10;最后进入了monitor4all.logRecord进行一个切面日志的原理，减少代码入侵转而用一种注解的方式实现" />
     <MESSAGE value="需要接入redis，但不知道是dtp还是log包需要强依赖于redis" />
-    <option name="LAST_COMMIT_MESSAGE" value="需要接入redis，但不知道是dtp还是log包需要强依赖于redis" />
+    <MESSAGE value="这里的mq策略就是一个队列来储存对应的信息，这个信息通过不同的key进行send和recall的分类，注册到请求头后对应消费端进行获取，然后再去执行逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="这里的mq策略就是一个队列来储存对应的信息，这个信息通过不同的key进行send和recall的分类，注册到请求头后对应消费端进行获取，然后再去执行逻辑" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
