@@ -21,7 +21,7 @@ public class RecallMQBusiness implements BusinessProcess<RecallTaskModel> {
 
     @Autowired
     private SendMqService sendMqService;
-    @Value("${hwoss.rabbitmq.routing.recall.key}")
+    @Value("${hwoss.rabbitmq.routing.message.key}")
     private String key;
 //    @Value("${hwoss.rabbitmq.exchange.name}")
 //    private String exchangeName;

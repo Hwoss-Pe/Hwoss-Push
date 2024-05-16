@@ -116,11 +116,11 @@
 
 
             <!--graylog-->
-            <dependency>
-                <groupId>de.siegmar</groupId>
-                <artifactId>logback-gelf</artifactId>
-                <version>3.0.0</version>
-            </dependency>
+            <!--            <dependency>-->
+            <!--                <groupId>de.siegmar</groupId>-->
+            <!--                <artifactId>logback-gelf</artifactId>-->
+            <!--                <version>3.0.0</version>-->
+            <!--            </dependency>-->
 
             <!--            &lt;!&ndash;xxl-job分布式定时任务&ndash;&gt;-->
             <!--            <dependency>-->

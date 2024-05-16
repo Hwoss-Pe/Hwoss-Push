@@ -88,10 +88,10 @@
             <artifactId>log-record-starter</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>de.siegmar</groupId>
-            <artifactId>logback-gelf</artifactId>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>de.siegmar</groupId>-->
+        <!--            <artifactId>logback-gelf</artifactId>-->
+        <!--        </dependency>-->
 
         <!--        动态线程池-->
         <dependency>

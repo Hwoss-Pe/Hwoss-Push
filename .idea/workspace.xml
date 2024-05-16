@@ -4,29 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="记录bug：某些依赖必须在父工程引入后才能在子工程引入，比如&#10; &lt;dependency&gt;&#10;                            &lt;groupId&gt;io.github.lyh200&lt;/groupId&gt;&#10;                            &lt;artifactId&gt;dynamic-tp-spring-boot-starter-apollo&lt;/artifactId&gt;&#10;                            &lt;version&gt;1.0.2&lt;/version&gt;&#10;                        &lt;/dependency&gt;&#10;也可能是其他问题导致，恶心">
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/config/HandlerThreadPoolConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/config/TaskPipelineConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/HandlerHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/pending/HandlerChannelHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/pending/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/pending/TaskPendingHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/service/impl/ConsumeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/LogUtils.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="做了两个map映射，一个是渠道和对应的处理器，一个是渠道和对应的线程池，在启动时就把对应的渠道消息和动态线程池都加进去&#10;这里补充动态线程池的做法，当创建对应的线程池后，交给Dtp进行注册，然后再给spring也注册，spring通过监听关闭事件来进行处理优雅关闭&#10;然后在TaskPipelineConfig大致定义了handler处理类责任链模式逻辑，注意引入不同的ProcessController，通过不同的业务，来指定引入不同的bean，然后封装好对应的业务逻辑，然后定义多线程消费对应的数据Task&#10;业务逻辑就是启动的时候注册多个ProcessController，进行map的多层映射，然后在service引入不同的对象，就可以执行不同逻辑&#10;&#10;最后进入了monitor4all.logRecord进行一个切面日志的原理，减少代码入侵转而用一种注解的方式实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/ConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/ConsumeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/recall/RecallMQBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/recall/RecallMQBusiness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendMQBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendMQBusiness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/config/PipeLineConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/config/PipeLineConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/RecallServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/RecallServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/SendServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/SendServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/MqService.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/SendMqService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitSendMqServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitSendMqServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ThreadPoolUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ThreadPoolUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/support/src/test/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/test/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/support/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitMqAdminConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitMqAdminConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/LogUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/LogUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +215,7 @@
       <workItem from="1715788104080" duration="159000" />
       <workItem from="1715788286870" duration="61000" />
       <workItem from="1715788374459" duration="2530000" />
-      <workItem from="1715840733565" duration="7921000" />
+      <workItem from="1715840733565" duration="11955000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -444,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715790851789</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="做了两个map映射，一个是渠道和对应的处理器，一个是渠道和对应的线程池，在启动时就把对应的渠道消息和动态线程池都加进去&#10;这里补充动态线程池的做法，当创建对应的线程池后，交给Dtp进行注册，然后再给spring也注册，spring通过监听关闭事件来进行处理优雅关闭&#10;然后在TaskPipelineConfig大致定义了handler处理类责任链模式逻辑，注意引入不同的ProcessController，通过不同的业务，来指定引入不同的bean，然后封装好对应的业务逻辑，然后定义多线程消费对应的数据Task&#10;业务逻辑就是启动的时候注册多个ProcessController，进行map的多层映射，然后在service引入不同的对象，就可以执行不同逻辑&#10;&#10;最后进入了monitor4all.logRecord进行一个切面日志的原理，减少代码入侵转而用一种注解的方式实现">
+      <created>1715849439815</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1715849439815</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +466,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改日志不输出，springProfile全责" />
     <MESSAGE value="连接数据库用5.7，阿里云服务器配置，并且必须注释掉dtp动态线程池的相关依赖" />
     <MESSAGE value="创建BasicResultVo作为返回类型共业务层调用，并且数据从RespStatusEnum枚举里面获得&#10;这里优雅的写法就是链式调用多用this关键字进行当前对象的调用，以及以后这种含数据的最终返回类型用泛型解决不要去用Object" />
     <MESSAGE value="增加请求和响应的对象封装，请求通过去区分相响应内容区分撤回信息还是发送信息，对于对应的设置消息内容，区别好bizId和bussId，然后封装到SimpleTask进行执行，这样封装就保证请求一个然后扇出处理" />
@@ -494,8 +490,20 @@
     <MESSAGE value="kafka测试，kafka的接入思路是一个topic多个消费组去消费，然后再去开线程池" />
     <MESSAGE value="增加线程池配置类，把线程池交给spring管理进行优雅关闭&#10;编写一点消费类service" />
     <MESSAGE value="记录bug：某些依赖必须在父工程引入后才能在子工程引入，比如&#10; &lt;dependency&gt;&#10;                            &lt;groupId&gt;io.github.lyh200&lt;/groupId&gt;&#10;                            &lt;artifactId&gt;dynamic-tp-spring-boot-starter-apollo&lt;/artifactId&gt;&#10;                            &lt;version&gt;1.0.2&lt;/version&gt;&#10;                        &lt;/dependency&gt;&#10;也可能是其他问题导致，恶心" />
-    <option name="LAST_COMMIT_MESSAGE" value="记录bug：某些依赖必须在父工程引入后才能在子工程引入，比如&#10; &lt;dependency&gt;&#10;                            &lt;groupId&gt;io.github.lyh200&lt;/groupId&gt;&#10;                            &lt;artifactId&gt;dynamic-tp-spring-boot-starter-apollo&lt;/artifactId&gt;&#10;                            &lt;version&gt;1.0.2&lt;/version&gt;&#10;                        &lt;/dependency&gt;&#10;也可能是其他问题导致，恶心" />
+    <MESSAGE value="做了两个map映射，一个是渠道和对应的处理器，一个是渠道和对应的线程池，在启动时就把对应的渠道消息和动态线程池都加进去&#10;这里补充动态线程池的做法，当创建对应的线程池后，交给Dtp进行注册，然后再给spring也注册，spring通过监听关闭事件来进行处理优雅关闭&#10;然后在TaskPipelineConfig大致定义了handler处理类责任链模式逻辑，注意引入不同的ProcessController，通过不同的业务，来指定引入不同的bean，然后封装好对应的业务逻辑，然后定义多线程消费对应的数据Task&#10;业务逻辑就是启动的时候注册多个ProcessController，进行map的多层映射，然后在service引入不同的对象，就可以执行不同逻辑&#10;&#10;最后进入了monitor4all.logRecord进行一个切面日志的原理，减少代码入侵转而用一种注解的方式实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="做了两个map映射，一个是渠道和对应的处理器，一个是渠道和对应的线程池，在启动时就把对应的渠道消息和动态线程池都加进去&#10;这里补充动态线程池的做法，当创建对应的线程池后，交给Dtp进行注册，然后再给spring也注册，spring通过监听关闭事件来进行处理优雅关闭&#10;然后在TaskPipelineConfig大致定义了handler处理类责任链模式逻辑，注意引入不同的ProcessController，通过不同的业务，来指定引入不同的bean，然后封装好对应的业务逻辑，然后定义多线程消费对应的数据Task&#10;业务逻辑就是启动的时候注册多个ProcessController，进行map的多层映射，然后在service引入不同的对象，就可以执行不同逻辑&#10;&#10;最后进入了monitor4all.logRecord进行一个切面日志的原理，减少代码入侵转而用一种注解的方式实现" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

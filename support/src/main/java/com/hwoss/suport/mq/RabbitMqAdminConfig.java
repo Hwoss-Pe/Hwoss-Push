@@ -13,29 +13,32 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class RabbitMqAdminConfig {
-    @Value("${hwoss.rabbitmq.routing.send.key}")
-    private String send_key;
+//    @Value("${hwoss.rabbitmq.routing.send.key}")
+//    private String send_key;
+//
+//    @Value("${hwoss.rabbitmq.routing.recall.key}")
+//    private String recall_key;
 
-    @Value("${hwoss.rabbitmq.routing.recall.key}")
-    private String recall_key;
+    @Value("${hwoss.rabbitmq.routing.message.key}")
+    private String message_key;
 
-    @Value("${hwoss.rabbitmq.send.queues}")
-    private String send_queue;
+    @Value("${hwoss.rabbitmq.message.queues}")
+    private String message_queue;
 
-    @Value("${hwoss.rabbitmq.recall.queues}")
-    private String recall_queue;
+    //    @Value("${hwoss.rabbitmq.recall.queues}")
+//    private String recall_queue;
     @Value("${hwoss.rabbitmq.exchange.name}")
     private String exchangeName;
 
 
-    @Bean(name = "sendQueue")
-    public Queue sendQueue() {
-        return new Queue(send_queue);
-    }
+//    @Bean(name = "Queue")
+//    public Queue sendQueue() {
+//        return new Queue(send_queue);
+//    }
 
-    @Bean(name = "recallQueue")
-    public Queue recallQueue() {
-        return new Queue(recall_queue);
+    @Bean(name = "Queue")
+    public Queue MessageQueue() {
+        return new Queue(message_queue);
     }
 
     @Bean
@@ -44,12 +47,16 @@ public class RabbitMqAdminConfig {
     }
 
     @Bean
-    public Binding bind(@Qualifier("sendQueue") Queue Queue1, TopicExchange topicExchange) {
-        return BindingBuilder.bind(Queue1).to(topicExchange).with(send_key);
+    public Binding bind(@Qualifier("Queue") Queue Queue1, TopicExchange topicExchange) {
+        return BindingBuilder.bind(Queue1).to(topicExchange).with(message_key);
     }
+//    @Bean
+//    public Binding binds(@Qualifier("Queue") Queue Queue1, TopicExchange topicExchange) {
+//        return BindingBuilder.bind(Queue1).to(topicExchange).with(recall_key);
+//    }
 
-    @Bean
-    public Binding binds(@Qualifier("recallQueue") Queue Queue1, TopicExchange topicExchange) {
-        return BindingBuilder.bind(Queue1).to(topicExchange).with(recall_key);
-    }
+//    @Bean
+//    public Binding binds(@Qualifier("recallQueue") Queue Queue1, TopicExchange topicExchange) {
+//        return BindingBuilder.bind(Queue1).to(topicExchange).with(recall_key);
+//    }
 }

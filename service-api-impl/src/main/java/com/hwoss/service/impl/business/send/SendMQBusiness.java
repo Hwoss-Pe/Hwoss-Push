@@ -24,7 +24,7 @@ public class SendMQBusiness implements BusinessProcess<SendTaskModel> {
 
     @Autowired
     private SendMqService sendMqService;
-    @Value("${hwoss.rabbitmq.routing.send.key}")
+    @Value("${hwoss.rabbitmq.routing.message.key}")
     private String key;
 //    @Value("${hwoss.rabbitmq.exchange.name}")
 //    private String exchangeName;
