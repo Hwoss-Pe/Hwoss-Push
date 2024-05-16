@@ -1,5 +1,3 @@
-import com.hwoss.suport.mq.MqService;
-
 public class Main {
 
     //    public static void main(String[] args) {

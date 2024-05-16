@@ -5,7 +5,7 @@ package com.hwoss.suport.mq;
  * @date 2024/05/13
  * 让对应的mq实现这个类重写send方法
  */
-public interface MqService {
+public interface SendMqService {
 
     /**
      * @param topic

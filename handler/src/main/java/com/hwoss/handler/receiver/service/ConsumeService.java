@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Service
-public interface ConsumerService {
+public interface ConsumeService {
     /**
      * 从MQ拉到消息进行消费，发送消息
      *

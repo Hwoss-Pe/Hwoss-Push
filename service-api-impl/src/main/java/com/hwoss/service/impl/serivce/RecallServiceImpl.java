@@ -9,6 +9,7 @@ import com.hwoss.service.api.pojo.SendResponse;
 import com.hwoss.service.api.service.RecallService;
 import com.hwoss.service.impl.domain.RecallTaskModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
@@ -16,6 +17,7 @@ import java.util.Objects;
 @Service
 public class RecallServiceImpl implements RecallService {
     @Autowired
+    @Qualifier("businessController")
     private ProcessController processController;
 
     @Override

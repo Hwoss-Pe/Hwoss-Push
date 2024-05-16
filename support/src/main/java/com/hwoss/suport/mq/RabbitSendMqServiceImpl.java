@@ -2,7 +2,6 @@ package com.hwoss.suport.mq;
 
 import com.hwoss.suport.Contents.MessageQueuePipeline;
 import lombok.extern.slf4j.Slf4j;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 @ConditionalOnProperty(name = "hwoss.mq.pipeline", havingValue = MessageQueuePipeline.RABBIT_MQ)
-public class RabbitSendMqServiceImpl implements MqService {
+public class RabbitSendMqServiceImpl implements SendMqService {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 

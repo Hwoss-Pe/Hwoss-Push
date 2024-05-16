@@ -9,7 +9,7 @@ import com.common.pipeline.BusinessProcess;
 import com.common.pipeline.ProcessContext;
 import com.common.vo.BasicResultVo;
 import com.google.common.base.Throwables;
-import com.hwoss.suport.mq.MqService;
+import com.hwoss.suport.mq.SendMqService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +23,7 @@ import java.util.List;
 public class SendMQBusiness implements BusinessProcess<SendTaskModel> {
 
     @Autowired
-    private MqService sendMqService;
+    private SendMqService sendMqService;
     @Value("${hwoss.rabbitmq.routing.send.key}")
     private String key;
 //    @Value("${hwoss.rabbitmq.exchange.name}")

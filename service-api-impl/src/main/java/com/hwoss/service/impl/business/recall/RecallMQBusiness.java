@@ -1,31 +1,26 @@
 package com.hwoss.service.impl.business.recall;
 
-import cn.hutool.core.collection.CollUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.common.domain.RecallTaskInfo;
-import com.common.domain.TaskInfo;
 import com.common.enums.RespStatusEnum;
 import com.common.pipeline.BusinessProcess;
 import com.common.pipeline.ProcessContext;
 import com.common.vo.BasicResultVo;
 import com.google.common.base.Throwables;
 import com.hwoss.service.impl.domain.RecallTaskModel;
-import com.hwoss.service.impl.domain.SendTaskModel;
-import com.hwoss.suport.mq.MqService;
+import com.hwoss.suport.mq.SendMqService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @Slf4j
 public class RecallMQBusiness implements BusinessProcess<RecallTaskModel> {
 
     @Autowired
-    private MqService sendMqService;
+    private SendMqService sendMqService;
     @Value("${hwoss.rabbitmq.routing.recall.key}")
     private String key;
 //    @Value("${hwoss.rabbitmq.exchange.name}")

@@ -72,7 +72,7 @@ public class PipeLineConfig {
     }
 
     //    启动的时候注入并且映射里面的mapConfig传入对应的template
-    @Bean
+    @Bean("businessController")
     public ProcessController getProcessController() {
         ProcessController processController = new ProcessController();
         Map<String, ProcessTemplate<?>> templateConfig = new HashMap<>(4);

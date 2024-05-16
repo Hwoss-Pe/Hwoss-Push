@@ -7,6 +7,7 @@ import com.common.pipeline.ProcessContext;
 import com.common.pipeline.ProcessController;
 import com.common.vo.BasicResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import com.hwoss.service.impl.domain.SendTaskModel;
 import com.hwoss.service.api.pojo.BatchRequest;
@@ -25,6 +26,7 @@ public class SendServiceImpl implements SendService {
      * 这个会在PipeConfig进行注入
      */
     @Autowired
+    @Qualifier("businessController")
     private ProcessController processController;
 
 
