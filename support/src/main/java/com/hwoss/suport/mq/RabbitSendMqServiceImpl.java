@@ -2,6 +2,7 @@ package com.hwoss.suport.mq;
 
 import com.hwoss.suport.Contents.MessageQueuePipeline;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,11 +23,21 @@ public class RabbitSendMqServiceImpl implements SendMqService {
     @Override
     public void send(String key, String jsonValue, String tagId) {
         //交换机，routingKey，值
-        rabbitTemplate.convertAndSend(exchangeName, key, jsonValue);
+        rabbitTemplate.convertAndSend(exchangeName, key, jsonValue, messagePostProcessor);
     }
 
     @Override
     public void send(String topic, String jsonValue) {
         send(exchangeName, jsonValue, "");
     }
+
+    /**
+     * 这个就是注册对应的请求头信息
+     */
+    private final static MessagePostProcessor messagePostProcessor = message -> {
+        message.getMessageProperties().setContentType("application/json");
+        message.getMessageProperties().setContentEncoding("UTF-8");
+        message.getMessageProperties().setHeader("messageType", "send");
+        return message;
+    };
 }

@@ -5,10 +5,12 @@ import com.common.domain.RecallTaskInfo;
 import com.common.domain.TaskInfo;
 import com.hwoss.handler.receiver.service.ConsumeService;
 import com.hwoss.suport.Contents.MessageQueuePipeline;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.mockito.internal.util.StringUtil;
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.QueueBinding;
@@ -18,10 +20,12 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Objects;
 
 
 @Component
-@ConditionalOnProperty(name = "austin.mq.pipeline", havingValue = MessageQueuePipeline.RABBIT_MQ)
+@ConditionalOnProperty(name = "hwoss.mq.pipeline", havingValue = MessageQueuePipeline.RABBIT_MQ)
+@Slf4j
 public class RabbitMqReceiver {
 
     private static final String MSG_TYPE_SEND = "send";
@@ -37,7 +41,14 @@ public class RabbitMqReceiver {
             key = "${hwoss.rabbitmq.routing.message.key}"
     ))
     public void onMessage(Message message) {
-        String messageType = message.getMessageProperties().getHeader("messageType");
+        MessageProperties messageProperties = message.getMessageProperties();
+//       这里的header需要进行在发送给mq信息的时候进行一个设置，不然会获取不到对应的请求头
+        String messageType = messageProperties.getHeader("messageType");
+        log.info("mq消费消息，改类型为" + messageType);
+        if (Objects.isNull(messageType)) {
+            log.info("messageType为null");
+            return;
+        }
         byte[] body = message.getBody();
         String messageContent = new String(body);
         if (StringUtils.isBlank(messageContent)) {

@@ -11,6 +11,7 @@ import com.google.common.base.Throwables;
 import com.hwoss.service.impl.domain.RecallTaskModel;
 import com.hwoss.suport.mq.SendMqService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -31,6 +32,12 @@ public class RecallMQBusiness implements BusinessProcess<RecallTaskModel> {
 
     @Value("${hwoss.mq.pipeline}")
     private String mqPipeline;
+    private final static MessagePostProcessor messagePostProcessor = message -> {
+        message.getMessageProperties().setContentType("application/json");
+        message.getMessageProperties().setContentEncoding("UTF-8");
+        message.getMessageProperties().setHeader("messageType", "recall");
+        return message;
+    };
 
     @Override
     public void process(ProcessContext<RecallTaskModel> context) {
@@ -46,4 +53,6 @@ public class RecallMQBusiness implements BusinessProcess<RecallTaskModel> {
                     , JSON.toJSONString(recallTaskInfo));
         }
     }
+
+
 }
