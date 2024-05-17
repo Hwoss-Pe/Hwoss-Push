@@ -23,4 +23,10 @@ public class CommonConstant {
      */
     public static final String ENV_DEV = "dev";
     public static final String ENV_TEST = "test";
+
+    /**
+     * JSON默认值
+     */
+    public static final String EMPTY_JSON_OBJECT = "{}";
+    public static final String EMPTY_VALUE_JSON_ARRAY = "[]";
 }

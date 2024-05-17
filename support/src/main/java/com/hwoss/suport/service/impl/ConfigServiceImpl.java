@@ -1,11 +1,14 @@
 package com.hwoss.suport.service.impl;
 
 import cn.hutool.setting.dialect.Props;
+import com.ctrip.framework.apollo.Config;
 import com.hwoss.suport.service.ConfigService;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
 
+@Service
 public class ConfigServiceImpl implements ConfigService {
 
     /**
@@ -35,6 +38,11 @@ public class ConfigServiceImpl implements ConfigService {
      */
     @Override
     public String getProperty(String key, String defaultValue) {
-        return null;
+        if (Boolean.TRUE.equals(enableApollo)) {
+            Config config = com.ctrip.framework.apollo.ConfigService.getConfig(namespaces);
+//            这个放啊传入的value就是去获取配置key的值，如果获取不到就返回默认
+            return config.getProperty(key, defaultValue);
+        }
+        return props.getProperty(key, defaultValue);
     }
 }
