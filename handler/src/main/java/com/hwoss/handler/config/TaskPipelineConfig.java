@@ -15,6 +15,10 @@ import java.util.Map;
  * @author Hwoss
  * @date 2024/05/16
  * 用于业务层的pipePine，注意自动装配的用bean名字来获取
+ * 丢弃
+ * 屏蔽
+ * 去重
+ * 发送
  */
 @Configuration
 public class TaskPipelineConfig {

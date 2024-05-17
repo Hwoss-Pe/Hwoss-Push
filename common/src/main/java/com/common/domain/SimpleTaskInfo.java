@@ -19,7 +19,7 @@ public class SimpleTaskInfo {
     private String bizId;
 
     /**
-     * 当前任务的Id
+     * 类似任务队列里面的专属Id
      */
     private String businessId;
 

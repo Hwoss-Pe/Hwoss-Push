@@ -79,19 +79,19 @@
                 <version>3.1.510</version>
             </dependency>
 
-            <!--            &lt;!&ndash;nacos&ndash;&gt;-->
-            <!--            <dependency>-->
-            <!--                <groupId>com.alibaba.boot</groupId>-->
-            <!--                <artifactId>nacos-config-spring-boot-starter</artifactId>-->
-            <!--                <version>0.2.12</version>-->
-            <!--            </dependency>-->
+            <!--nacos-->
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-config-spring-boot-starter</artifactId>
+                <version>0.2.12</version>
+            </dependency>
 
-            <!--            &lt;!&ndash;apollo&ndash;&gt;-->
-            <!--            <dependency>-->
-            <!--                <groupId>com.ctrip.framework.apollo</groupId>-->
-            <!--                <artifactId>apollo-client</artifactId>-->
-            <!--                <version>2.1.0</version>-->
-            <!--            </dependency>-->
+            <!--apollo-->
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>2.1.0</version>
+            </dependency>
 
             <!--注解打印日志-->
             <dependency>

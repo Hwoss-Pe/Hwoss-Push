@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="这里的mq策略就是一个队列来储存对应的信息，这个信息通过不同的key进行send和recall的分类，注册到请求头后对应消费端进行获取，然后再去执行逻辑">
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/impl/ConsumeServiceImpl.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="实现消费的接口，对于撤回直接执行，对于发送去走一遍责任链">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/domain/AnchorInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/AnchorState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/ConfigService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/impl/ConfigServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/HandlerHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/HandlerHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/pending/TaskPendingHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/pending/TaskPendingHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/service/impl/ConsumeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/domain/SimpleTaskInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/domain/SimpleTaskInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/config/TaskPipelineConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/config/TaskPipelineConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/support/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/LogUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/LogUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +31,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -95,7 +103,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="SELECTIVE" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../austin-master/austin-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -111,6 +119,9 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\messsagePushing\web\src\main\resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.common.enums" />
       <recent name="com.common.dto.model" />
@@ -210,7 +221,9 @@
       <workItem from="1715788286870" duration="61000" />
       <workItem from="1715788374459" duration="2530000" />
       <workItem from="1715840733565" duration="12105000" />
-      <workItem from="1715864511576" duration="8281000" />
+      <workItem from="1715864511576" duration="10018000" />
+      <workItem from="1715914383972" duration="617000" />
+      <workItem from="1715932896026" duration="5678000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -450,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715872368790</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="实现消费的接口，对于撤回直接执行，对于发送去走一遍责任链">
+      <created>1715873696340</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1715873696340</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +495,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加请求和响应的对象封装，请求通过去区分相响应内容区分撤回信息还是发送信息，对于对应的设置消息内容，区别好bizId和bussId，然后封装到SimpleTask进行执行，这样封装就保证请求一个然后扇出处理" />
     <MESSAGE value="责任链接口的实现设计，自定义责任链异常处理" />
     <MESSAGE value="编写责任链ProcessController，并且做预检查，也就是ProcessTemplate(某个责任链模板)，通过责任链去获取业务列表List&lt;BusinessProcess&gt;&#10;再去获取对应的模板获取业务列表然后执行，泛化问题不知道是否有影响代码运行，还没调试" />
     <MESSAGE value="增加ContentModel用来对于不同渠道的数据进行划分，理解SM，PM，BM的关系，只有BM是真正作用在业务层进行操作，因此对于创建出需要用的模型的时候就去实现PM，然后设置到Context里面，最后用ProcessController进行传递上下文就行" />
@@ -500,7 +519,8 @@
     <MESSAGE value="做了两个map映射，一个是渠道和对应的处理器，一个是渠道和对应的线程池，在启动时就把对应的渠道消息和动态线程池都加进去&#10;这里补充动态线程池的做法，当创建对应的线程池后，交给Dtp进行注册，然后再给spring也注册，spring通过监听关闭事件来进行处理优雅关闭&#10;然后在TaskPipelineConfig大致定义了handler处理类责任链模式逻辑，注意引入不同的ProcessController，通过不同的业务，来指定引入不同的bean，然后封装好对应的业务逻辑，然后定义多线程消费对应的数据Task&#10;业务逻辑就是启动的时候注册多个ProcessController，进行map的多层映射，然后在service引入不同的对象，就可以执行不同逻辑&#10;&#10;最后进入了monitor4all.logRecord进行一个切面日志的原理，减少代码入侵转而用一种注解的方式实现" />
     <MESSAGE value="需要接入redis，但不知道是dtp还是log包需要强依赖于redis" />
     <MESSAGE value="这里的mq策略就是一个队列来储存对应的信息，这个信息通过不同的key进行send和recall的分类，注册到请求头后对应消费端进行获取，然后再去执行逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="这里的mq策略就是一个队列来储存对应的信息，这个信息通过不同的key进行send和recall的分类，注册到请求头后对应消费端进行获取，然后再去执行逻辑" />
+    <MESSAGE value="实现消费的接口，对于撤回直接执行，对于发送去走一遍责任链" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现消费的接口，对于撤回直接执行，对于发送去走一遍责任链" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -515,11 +535,6 @@
           <url>file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java</url>
           <line>43</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitSendMqServiceImpl.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
