@@ -23,5 +23,7 @@ public abstract class AbstractLimitService implements LimitService {
         return re;
     }
 
-
+    public String deduplicationSingleKey(TaskInfo taskInfo, String receiver, AbstractDeduplicationService service) {
+        return service.deduplicationSingleKey(taskInfo, receiver);
+    }
 }
