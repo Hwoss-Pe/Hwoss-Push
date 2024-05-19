@@ -5,10 +5,13 @@ import com.common.domain.TaskInfo;
 import com.common.enums.AnchorState;
 import com.common.enums.DeduplicationType;
 import com.hwoss.handler.deduplication.DeduplicationParam;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.Objects;
 
+
+@Service
 public class FrequencyDeduplicationBuilder extends AbstractDeduplicationBuilder {
     public FrequencyDeduplicationBuilder() {
         deduplicationType = DeduplicationType.FREQUENCY.getCode();

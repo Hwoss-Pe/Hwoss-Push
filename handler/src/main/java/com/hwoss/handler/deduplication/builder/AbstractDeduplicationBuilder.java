@@ -6,9 +6,11 @@ import com.common.domain.TaskInfo;
 import com.hwoss.handler.deduplication.DeduplicationHolder;
 import com.hwoss.handler.deduplication.DeduplicationParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.Objects;
+
 
 public abstract class AbstractDeduplicationBuilder implements Builder {
 
