@@ -13,6 +13,6 @@ public interface Builder {
      * @param taskInfo
      * @return
      */
-    DeduplicationParam buildDeduplicationParam(String deduplication, TaskInfo taskInfo);
+    DeduplicationParam build(String deduplication, TaskInfo taskInfo);
 
 }

@@ -21,10 +21,10 @@ public class ContentDeduplicationBuilder extends AbstractDeduplicationBuilder {
      */
     public ContentDeduplicationBuilder() {
         deduplicationType = DeduplicationType.CONTENT.getCode();
-    }
+}
 
     @Override
-    public DeduplicationParam buildDeduplicationParam(String deduplication, TaskInfo taskInfo) {
+    public DeduplicationParam build(String deduplication, TaskInfo taskInfo) {
         DeduplicationParam deduplicationParam = getParamsFromConfig(deduplicationType, deduplication, taskInfo);
         if (Objects.isNull(deduplicationParam)) {
             return null;

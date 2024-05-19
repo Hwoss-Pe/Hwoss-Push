@@ -8,9 +8,9 @@ import com.common.domain.TaskInfo;
  * @date 2024/05/16
  */
 
-public interface HandlerHolder {
+public interface Handler {
 
-    void handleSend(TaskInfo taskInfo);
+    void doHandler(TaskInfo taskInfo);
 
 
     void handleRecall(RecallTaskInfo recallTaskInfo);

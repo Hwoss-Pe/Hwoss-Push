@@ -1,6 +1,8 @@
 package com.common.enums;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class EnumsUtils {
     private EnumsUtils() {
@@ -38,4 +40,9 @@ public class EnumsUtils {
                 .orElse(null);
     }
 
+    public static <T extends PowerfulEnums> List<Integer> getCodeList(Class<T> enumClass) {
+        return Arrays.stream(enumClass.getEnumConstants())
+                .map(PowerfulEnums::getCode)
+                .collect(Collectors.toList());
+    }
 }

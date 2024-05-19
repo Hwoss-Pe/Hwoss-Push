@@ -39,7 +39,7 @@ public abstract class AbstractDeduplicationService implements DeduplicationServi
         TaskInfo taskInfo = deduplicationParam.getTaskInfo();
         Set<String> filter = limitService.filter(this, taskInfo, deduplicationParam);
         if (!filter.isEmpty()) {
-            taskInfo.getReceivers().retainAll(filter);
+            taskInfo.getReceivers().removeAll(filter);
             logUtils.print(AnchorInfo.builder().
                     bizId(taskInfo.getBizId()).
                     messageId(taskInfo.getMessageId()).

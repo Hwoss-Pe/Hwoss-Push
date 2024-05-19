@@ -1,6 +1,6 @@
-package com.hwoss.handler.pending;
+package com.hwoss.handler.handler;
 
-import com.hwoss.handler.handler.HandlerHolder;
+import com.hwoss.handler.handler.Handler;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -13,13 +13,13 @@ import java.util.Map;
  */
 @Component
 public class HandlerChannelHolder {
-    private Map<Integer, HandlerHolder> handlers = new HashMap<>(128);
+    private Map<Integer, Handler> handlers = new HashMap<>(128);
 
-    public void putHandler(Integer channelCode, HandlerHolder handler) {
+    public void putHandler(Integer channelCode, Handler handler) {
         handlers.put(channelCode, handler);
     }
 
-    public HandlerHolder route(Integer channelCode) {
+    public Handler route(Integer channelCode) {
         return handlers.get(channelCode);
     }
 }
