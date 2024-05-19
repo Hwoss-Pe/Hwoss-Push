@@ -4,14 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="实现消费的接口，对于撤回直接执行，对于发送去走一遍责任链">
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/DiscardBusiness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/ShieldBusiness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/RedisUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/resources/limit.lua" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="编写redis工具封装类，以及配置中心配置名单过滤，编写lua脚本">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/DeduplicationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/ShieldType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/DeduplicationHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/DeduplicationParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/builder/AbstractDeduplicationBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/builder/Builder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/builder/ContentDeduplicationBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/builder/FrequencyDeduplicationBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/limit/AbstractLimitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/limit/LimitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/limit/SimpleLimitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/service/AbstractDeduplicationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/service/ContentDeduplicationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/service/DeduplicationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/service/FrequencyDeduplicationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/constant/CommonConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/constant/CommonConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/impl/ConfigServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/impl/ConfigServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/ShieldBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/ShieldBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/RedisUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/RedisUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +33,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -141,6 +152,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MessageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="web" />
       <extension name="coverage">
@@ -212,7 +234,8 @@
       <workItem from="1715864511576" duration="10018000" />
       <workItem from="1715914383972" duration="617000" />
       <workItem from="1715932896026" duration="5678000" />
-      <workItem from="1715951606510" duration="617000" />
+      <workItem from="1715951606510" duration="717000" />
+      <workItem from="1716104288569" duration="7523000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -459,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715873696340</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="编写redis工具封装类，以及配置中心配置名单过滤，编写lua脚本">
+      <created>1715952312992</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1715952312992</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +514,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="责任链接口的实现设计，自定义责任链异常处理" />
     <MESSAGE value="编写责任链ProcessController，并且做预检查，也就是ProcessTemplate(某个责任链模板)，通过责任链去获取业务列表List&lt;BusinessProcess&gt;&#10;再去获取对应的模板获取业务列表然后执行，泛化问题不知道是否有影响代码运行，还没调试" />
     <MESSAGE value="增加ContentModel用来对于不同渠道的数据进行划分，理解SM，PM，BM的关系，只有BM是真正作用在业务层进行操作，因此对于创建出需要用的模型的时候就去实现PM，然后设置到Context里面，最后用ProcessController进行传递上下文就行" />
     <MESSAGE value="实现接口send,但是ProcessController还需要进行注入" />
@@ -509,7 +538,8 @@
     <MESSAGE value="需要接入redis，但不知道是dtp还是log包需要强依赖于redis" />
     <MESSAGE value="这里的mq策略就是一个队列来储存对应的信息，这个信息通过不同的key进行send和recall的分类，注册到请求头后对应消费端进行获取，然后再去执行逻辑" />
     <MESSAGE value="实现消费的接口，对于撤回直接执行，对于发送去走一遍责任链" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现消费的接口，对于撤回直接执行，对于发送去走一遍责任链" />
+    <MESSAGE value="编写redis工具封装类，以及配置中心配置名单过滤，编写lua脚本" />
+    <option name="LAST_COMMIT_MESSAGE" value="编写redis工具封装类，以及配置中心配置名单过滤，编写lua脚本" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

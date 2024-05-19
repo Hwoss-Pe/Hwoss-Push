@@ -84,6 +84,21 @@ public class RedisUtils {
     }
 
     /**
+     * lpush 方法 并指定 过期时间
+     */
+    public void lPush(String key, String value, Long seconds) {
+        try {
+            redisTemplate.executePipelined((RedisCallback<String>) connection -> {
+                connection.lPush(key.getBytes(), value.getBytes());
+                connection.expire(key.getBytes(), seconds);
+                return null;
+            });
+        } catch (Exception e) {
+            log.error("RedisUtils#lPush fail! e:{}", Throwables.getStackTraceAsString(e));
+        }
+    }
+
+    /**
      * lPop 方法
      */
     public String lPop(String key) {
