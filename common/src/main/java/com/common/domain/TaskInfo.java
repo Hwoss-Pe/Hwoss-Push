@@ -31,7 +31,7 @@ public class TaskInfo implements Serializable, ProcessModel {
     private String messageId;
 
     /**
-     * 业务Id
+     * 业务的Id
      */
     private Long businessId;
 
