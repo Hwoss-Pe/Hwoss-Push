@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="去重逻辑记录：&#10;首先，当 Spring 创建 ContentDeduplicationBuilder 实例时，因为他被@Service修饰，会首先调用它的构造方法。在这个构造方法中，deduplicationType 被赋值。然后执行init()注册到holder里面。&#10;其次是对应的builder实现类里面去实现Builder接口时候，借助中间抽象类已经把当前对应的deduplicationType读到，那么就可以调用抽象类根据对应的deduplicationType获取对应的配置参数，还可以做锚点。&#10;&#10;整个流程：&#10;首先，整个初始化的时候就会把holder映射给它填满对应的type和service以及builder，那么对应具体的业务builder就会去获取对应配置类从而获取真正的参数DeduplicationParam进行赋值&#10;关于limitService和的方法映射也是接口实现的，它的抽象类主要是去配置获取所有key的方法和单个key的方法,其中的获取单个key方法由具体的ContentDeduplicationService去实现获取单个key的方法，不过他是需要传入AbstractDeduplicationService，然后去调用该实现类获取单个方法。可以说依赖于Dup的方法，然后具体limit去实现他的filter就行&#10;用的应该是模板设计模式">
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/DeduplicationBusiness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/SendMessageAction.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="完成整个消息去重操作">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/RateLimitStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/flowcontrol/FlowControlFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/flowcontrol/FlowControlParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/flowcontrol/FlowControlService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/flowcontrol/LocalRateLimit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/flowcontrol/impl/RequestRateLimitServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/flowcontrol/impl/SendUserNumRateLimitServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/enums/EnumsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/EnumsUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/builder/Builder.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/builder/Builder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/builder/ContentDeduplicationBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/builder/ContentDeduplicationBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/builder/FrequencyDeduplicationBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/builder/FrequencyDeduplicationBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/service/AbstractDeduplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/deduplication/service/AbstractDeduplicationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/HandlerHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/Handler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/pending/HandlerChannelHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/pending/HandlerChannelHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/impl/ConsumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/impl/ConsumeServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +22,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -145,13 +143,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -228,7 +228,8 @@
       <workItem from="1715914383972" duration="617000" />
       <workItem from="1715932896026" duration="5678000" />
       <workItem from="1715951606510" duration="717000" />
-      <workItem from="1716104288569" duration="17826000" />
+      <workItem from="1716104288569" duration="18698000" />
+      <workItem from="1716191964129" duration="4863000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -503,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716130313042</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="完成整个消息去重操作">
+      <created>1716132452686</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1716132452686</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +536,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="为责任量配置业务的进行，配置类PipeLine，好像要加扫描包路径才能扫到对应的业务包，这里也为项目启动的时候映射出code和对应ProcessTemplate，由Controller后去对应的ProcessTemplate后进行所运用的业务链子，总的来说就是启动组装对应的链子。&#10;做了请求的前置检查用stream流" />
     <MESSAGE value="常量设计，引入jpa的相关用法实现在MessageTemplateDao里面，以及TaskInfo和对应的MessTemplate数据进行组装，运用Optional类型，优化jdk8前比较丑陋的写法，衍生出多种api" />
     <MESSAGE value="定义枚举类ChannelType，并且对不同的渠道分别建立模型，都去实现对应的变量，定义了枚举接口，让其他枚举继承后重写必有得code和description方法&#10;在assembleTaskInfoList组装参数，目前到替换占位符，这块用spring的api去实现" />
     <MESSAGE value="对占位符理解后，首先要去PropertyPlaceholderHelper，然后构造的时候传入对应的前后缀，然后执行replacePlaceholders，传入origin，还有PlaceholderResolver接口，这个可以拿一个类去实现，这里存疑对Object类的无参构造，重写resolvePlaceholder保证map里面有占位符要的数据是一样的，返回实际的值，最后在replacePlaceholders完成替换" />
@@ -553,7 +560,8 @@
     <MESSAGE value="编写夜间屏蔽逻辑，以及对去重的初步实现，注意设计模式和抽象类的运用" />
     <MESSAGE value="完成两个去重要求的逻辑，以及lua脚本理解编写" />
     <MESSAGE value="去重逻辑记录：&#10;首先，当 Spring 创建 ContentDeduplicationBuilder 实例时，因为他被@Service修饰，会首先调用它的构造方法。在这个构造方法中，deduplicationType 被赋值。然后执行init()注册到holder里面。&#10;其次是对应的builder实现类里面去实现Builder接口时候，借助中间抽象类已经把当前对应的deduplicationType读到，那么就可以调用抽象类根据对应的deduplicationType获取对应的配置参数，还可以做锚点。&#10;&#10;整个流程：&#10;首先，整个初始化的时候就会把holder映射给它填满对应的type和service以及builder，那么对应具体的业务builder就会去获取对应配置类从而获取真正的参数DeduplicationParam进行赋值&#10;关于limitService和的方法映射也是接口实现的，它的抽象类主要是去配置获取所有key的方法和单个key的方法,其中的获取单个key方法由具体的ContentDeduplicationService去实现获取单个key的方法，不过他是需要传入AbstractDeduplicationService，然后去调用该实现类获取单个方法。可以说依赖于Dup的方法，然后具体limit去实现他的filter就行&#10;用的应该是模板设计模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="去重逻辑记录：&#10;首先，当 Spring 创建 ContentDeduplicationBuilder 实例时，因为他被@Service修饰，会首先调用它的构造方法。在这个构造方法中，deduplicationType 被赋值。然后执行init()注册到holder里面。&#10;其次是对应的builder实现类里面去实现Builder接口时候，借助中间抽象类已经把当前对应的deduplicationType读到，那么就可以调用抽象类根据对应的deduplicationType获取对应的配置参数，还可以做锚点。&#10;&#10;整个流程：&#10;首先，整个初始化的时候就会把holder映射给它填满对应的type和service以及builder，那么对应具体的业务builder就会去获取对应配置类从而获取真正的参数DeduplicationParam进行赋值&#10;关于limitService和的方法映射也是接口实现的，它的抽象类主要是去配置获取所有key的方法和单个key的方法,其中的获取单个key方法由具体的ContentDeduplicationService去实现获取单个key的方法，不过他是需要传入AbstractDeduplicationService，然后去调用该实现类获取单个方法。可以说依赖于Dup的方法，然后具体limit去实现他的filter就行&#10;用的应该是模板设计模式" />
+    <MESSAGE value="完成整个消息去重操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成整个消息去重操作" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
