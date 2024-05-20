@@ -30,7 +30,7 @@ public class ChannelAccount {
     private Integer sendChannel;
 
     /**
-     * 账号配置
+     * 账号配置存储类似token，密钥等信息用json显示
      */
     private String accountConfig;
 

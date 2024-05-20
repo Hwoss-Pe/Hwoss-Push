@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="完成Handler的对应抽象类">
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/impl/EmailHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/dao/ChannelAccountDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/domain/ChannelAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/AccountUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/FileUtils.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="编写ChannelAccountDao，把远程url文件传输到本地路径">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/impl/EmailHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/impl/EmailHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/domain/ChannelAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/domain/ChannelAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/AccountUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/AccountUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +226,7 @@
       <workItem from="1715932896026" duration="5678000" />
       <workItem from="1715951606510" duration="717000" />
       <workItem from="1716104288569" duration="18698000" />
-      <workItem from="1716191964129" duration="10738000" />
+      <workItem from="1716191964129" duration="12020000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -523,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716198398950</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="编写ChannelAccountDao，把远程url文件传输到本地路径">
+      <created>1716219384931</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1716219384931</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +554,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="对占位符理解后，首先要去PropertyPlaceholderHelper，然后构造的时候传入对应的前后缀，然后执行replacePlaceholders，传入origin，还有PlaceholderResolver接口，这个可以拿一个类去实现，这里存疑对Object类的无参构造，重写resolvePlaceholder保证map里面有占位符要的数据是一样的，返回实际的值，最后在replacePlaceholders完成替换" />
     <MESSAGE value="拼装参数SendAssembleBusiness写完,这里用hutool包去调用反射的工具，如果自己写的话需要大量反射的tryCatch出来" />
     <MESSAGE value="拼装参数SendAssembleBusiness写完,这里用hutool包去调用反射的工具，如果自己写的话需要大量反射的tryCatch出来，用ReflectUtil会好很多" />
     <MESSAGE value="对接收者的数据进行正则校验" />
@@ -573,7 +578,8 @@
     <MESSAGE value="完成整个消息去重操作" />
     <MESSAGE value="完成限流操作&#10;先完成自定义注解，通过注解来决定具体的实现类的类型，用注解里的属性可选，编写对应FlowControlParam存储对应的初始限流器和限流策略，限流大小RateLimiter，&#10;FlowControlFactory存储对应的不同限流方式，对应不同服务的map，在初始化的时候通过上下文进行反射去找注解，然后把对应的类获取后通过注解找到类型映射完成。编写对应获取服务配置类，以配置中心为准，flowControl主方法进行限流操作，对于阻塞时间进行一个日志记录" />
     <MESSAGE value="完成Handler的对应抽象类" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成Handler的对应抽象类" />
+    <MESSAGE value="编写ChannelAccountDao，把远程url文件传输到本地路径" />
+    <option name="LAST_COMMIT_MESSAGE" value="编写ChannelAccountDao，把远程url文件传输到本地路径" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
