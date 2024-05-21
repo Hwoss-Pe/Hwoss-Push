@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="编写ChannelAccountDao，把远程url文件传输到本地路径">
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="编写邮件发送的实现类具体逻辑，">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/dto/account/SmsAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/domain/MessageTypeSmsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/domain/SmsParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/impl/SmsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/script/SmsScript.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/script/impl/TencentSmsScript.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/dao/SmsRecordDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/domain/SmsRecord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/impl/EmailHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/impl/EmailHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/domain/ChannelAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/domain/ChannelAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/AccountUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/AccountUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/SendMessageAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/SendMessageAction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,36 +50,36 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/config/PipeLineConfig.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/common/src/main/java/com/common/enums/AnchorState.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAfterCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/ConsumeService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/config/TaskPipelineConfig.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/handler/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/ConfigService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/support/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendPreCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAssembleBusiness.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/web/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/service/SendService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/impl/ConfigServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/web/src/main/resources/local.properties" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/web/src/main/resources/logback.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/web/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/config/ThreadPoolExecutorShutdownDefinition.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/MessageApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/common/src/main/java/com/common/domain/SimpleTaskInfo.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/SendController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ContentHolderUtil.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/TaskInfoUtils.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ThreadPoolUtils.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAssembleBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/service/SendService.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$MAVEN_REPOSITORY$/de/siegmar/logback-gelf/3.0.0/logback-gelf-3.0.0.pom" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/SendServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendPreCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAfterCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/common/src/main/java/com/common/enums/AnchorState.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendMQBusiness.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/config/ThreadPoolExecutorShutdownDefinition.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ThreadPoolUtils.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/SendServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/config/PipeLineConfig.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/handler/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/ConfigService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/src/main/resources/logback.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/impl/ConfigServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ContentHolderUtil.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/src/main/resources/local.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/MessageApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/config/TaskPipelineConfig.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2g5ydCZt57OWtc0CtrY6Whz3kIQ" />
   <component name="ProjectLevelVcsManager">
@@ -101,7 +106,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="SELECTIVE" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../multisend-master/multisend-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -121,6 +126,7 @@
       <recent name="D:\messsagePushing\web\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hwoss.handler.domain" />
       <recent name="com.common.enums" />
       <recent name="com.common.dto.model" />
       <recent name="com.web" />
@@ -140,15 +146,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -226,7 +230,9 @@
       <workItem from="1715932896026" duration="5678000" />
       <workItem from="1715951606510" duration="717000" />
       <workItem from="1716104288569" duration="18698000" />
-      <workItem from="1716191964129" duration="12020000" />
+      <workItem from="1716191964129" duration="12355000" />
+      <workItem from="1716277617562" duration="3903000" />
+      <workItem from="1716283504580" duration="10477000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -529,7 +535,28 @@
       <option name="project" value="LOCAL" />
       <updated>1716219384931</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="编写邮件发送的实现类具体逻辑，">
+      <created>1716220777407</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1716220777407</updated>
+    </task>
+    <task id="LOCAL-00045" summary="编写邮件发送的实现类具体逻辑，">
+      <created>1716220848552</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1716220848552</updated>
+    </task>
+    <task id="LOCAL-00046" summary="编写邮件发送的实现类具体逻辑，">
+      <created>1716220877265</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1716220877265</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +581,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="拼装参数SendAssembleBusiness写完,这里用hutool包去调用反射的工具，如果自己写的话需要大量反射的tryCatch出来" />
     <MESSAGE value="拼装参数SendAssembleBusiness写完,这里用hutool包去调用反射的工具，如果自己写的话需要大量反射的tryCatch出来，用ReflectUtil会好很多" />
     <MESSAGE value="对接收者的数据进行正则校验" />
     <MESSAGE value="整理自用" />
@@ -579,7 +605,8 @@
     <MESSAGE value="完成限流操作&#10;先完成自定义注解，通过注解来决定具体的实现类的类型，用注解里的属性可选，编写对应FlowControlParam存储对应的初始限流器和限流策略，限流大小RateLimiter，&#10;FlowControlFactory存储对应的不同限流方式，对应不同服务的map，在初始化的时候通过上下文进行反射去找注解，然后把对应的类获取后通过注解找到类型映射完成。编写对应获取服务配置类，以配置中心为准，flowControl主方法进行限流操作，对于阻塞时间进行一个日志记录" />
     <MESSAGE value="完成Handler的对应抽象类" />
     <MESSAGE value="编写ChannelAccountDao，把远程url文件传输到本地路径" />
-    <option name="LAST_COMMIT_MESSAGE" value="编写ChannelAccountDao，把远程url文件传输到本地路径" />
+    <MESSAGE value="编写邮件发送的实现类具体逻辑，" />
+    <option name="LAST_COMMIT_MESSAGE" value="编写邮件发送的实现类具体逻辑，" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
