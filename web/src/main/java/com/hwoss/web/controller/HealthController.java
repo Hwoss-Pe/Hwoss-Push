@@ -1,4 +1,4 @@
-package com.hwoss.web;
+package com.hwoss.web.controller;
 
 import com.hwoss.suport.mq.SendMqService;
 import lombok.extern.slf4j.Slf4j;
@@ -10,17 +10,12 @@ import java.util.logging.Logger;
 
 @RestController
 @Slf4j
-public class Test {
-    private static final Logger LOG = Logger.getLogger(Test.class.getName());
-    @Autowired
-    private SendMqService sendMqService;
-
+public class HealthController {
 
     @RequestMapping("/test")
     String test() {
-//        int a = 1/0;
-        sendMqService.send("hwoss_KEY", "111", "1");
-        return "nihao ";
+
+        return "success ";
 
     }
 
