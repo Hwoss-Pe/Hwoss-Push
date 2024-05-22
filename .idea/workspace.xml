@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="编写邮件发送的实现类具体逻辑，">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/dto/account/SmsAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/domain/MessageTypeSmsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/domain/SmsParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/impl/SmsHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/script/SmsScript.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/script/impl/TencentSmsScript.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/dao/SmsRecordDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/domain/SmsRecord.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="对于短信分发逻辑，SmsHandler主要编写逻辑，理清楚渠道账号和对应的模板，调用对应的渠道短信的时候，先去获取配置中心，对权重比可以进行设置，采用负载均衡的思想进行分流，如果模板有对应的渠道就直接用渠道账号的脚本，如果走的是配置中心上的脚本，就采用服务器分发，定义了大致的sms框架逻辑">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/dto/account/TencentSmsAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/SmsStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/SendMessageAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/SendMessageAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/script/impl/TencentSmsScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/script/impl/TencentSmsScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/AccountUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/AccountUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +101,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="SELECTIVE" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../multisend-master/multisend-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -126,8 +121,8 @@
       <recent name="D:\messsagePushing\web\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.hwoss.handler.domain" />
       <recent name="com.common.enums" />
+      <recent name="com.hwoss.handler.domain" />
       <recent name="com.common.dto.model" />
       <recent name="com.web" />
     </key>
@@ -146,13 +141,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -232,7 +229,8 @@
       <workItem from="1716104288569" duration="18698000" />
       <workItem from="1716191964129" duration="12355000" />
       <workItem from="1716277617562" duration="3903000" />
-      <workItem from="1716283504580" duration="10477000" />
+      <workItem from="1716283504580" duration="13199000" />
+      <workItem from="1716366796362" duration="2236000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -556,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716220877265</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="对于短信分发逻辑，SmsHandler主要编写逻辑，理清楚渠道账号和对应的模板，调用对应的渠道短信的时候，先去获取配置中心，对权重比可以进行设置，采用负载均衡的思想进行分流，如果模板有对应的渠道就直接用渠道账号的脚本，如果走的是配置中心上的脚本，就采用服务器分发，定义了大致的sms框架逻辑">
+      <created>1716305229132</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1716305229133</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +586,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="拼装参数SendAssembleBusiness写完,这里用hutool包去调用反射的工具，如果自己写的话需要大量反射的tryCatch出来，用ReflectUtil会好很多" />
     <MESSAGE value="对接收者的数据进行正则校验" />
     <MESSAGE value="整理自用" />
     <MESSAGE value="增加对应发送mq的样例，这里创建的mq配置类只进行发送，并没有使用@Listener去自动创建，因此进行原始构建，采用的是Topic交换机" />
@@ -606,7 +610,8 @@
     <MESSAGE value="完成Handler的对应抽象类" />
     <MESSAGE value="编写ChannelAccountDao，把远程url文件传输到本地路径" />
     <MESSAGE value="编写邮件发送的实现类具体逻辑，" />
-    <option name="LAST_COMMIT_MESSAGE" value="编写邮件发送的实现类具体逻辑，" />
+    <MESSAGE value="对于短信分发逻辑，SmsHandler主要编写逻辑，理清楚渠道账号和对应的模板，调用对应的渠道短信的时候，先去获取配置中心，对权重比可以进行设置，采用负载均衡的思想进行分流，如果模板有对应的渠道就直接用渠道账号的脚本，如果走的是配置中心上的脚本，就采用服务器分发，定义了大致的sms框架逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="对于短信分发逻辑，SmsHandler主要编写逻辑，理清楚渠道账号和对应的模板，调用对应的渠道短信的时候，先去获取配置中心，对权重比可以进行设置，采用负载均衡的思想进行分流，如果模板有对应的渠道就直接用渠道账号的脚本，如果走的是配置中心上的脚本，就采用服务器分发，定义了大致的sms框架逻辑" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
