@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="对于短信分发逻辑，SmsHandler主要编写逻辑，理清楚渠道账号和对应的模板，调用对应的渠道短信的时候，先去获取配置中心，对权重比可以进行设置，采用负载均衡的思想进行分流，如果模板有对应的渠道就直接用渠道账号的脚本，如果走的是配置中心上的脚本，就采用服务器分发，定义了大致的sms框架逻辑">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/dto/account/TencentSmsAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/SmsStatus.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="对于获取所有改渠道的账号进行遍历找到需要的脚本，编写腾讯云的短信脚本，以及拉取回执信息">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/script/impl/TencentSmsScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/script/impl/TencentSmsScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/AccountUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/AccountUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/impl/SmsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/impl/SmsHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +227,7 @@
       <workItem from="1716191964129" duration="12355000" />
       <workItem from="1716277617562" duration="3903000" />
       <workItem from="1716283504580" duration="13199000" />
-      <workItem from="1716366796362" duration="2236000" />
+      <workItem from="1716366796362" duration="2859000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
       <created>1715005234652</created>
@@ -561,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716305229133</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="对于获取所有改渠道的账号进行遍历找到需要的脚本，编写腾讯云的短信脚本，以及拉取回执信息">
+      <created>1716369146785</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1716369146785</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +590,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="对接收者的数据进行正则校验" />
     <MESSAGE value="整理自用" />
     <MESSAGE value="增加对应发送mq的样例，这里创建的mq配置类只进行发送，并没有使用@Listener去自动创建，因此进行原始构建，采用的是Topic交换机" />
     <MESSAGE value="增加对应发送mq的样例，这里创建的mq配置类只进行发送，并没有使用@Listener去自动创建，因此进行原始构建，采用的是TopicQueue" />
@@ -611,7 +614,8 @@
     <MESSAGE value="编写ChannelAccountDao，把远程url文件传输到本地路径" />
     <MESSAGE value="编写邮件发送的实现类具体逻辑，" />
     <MESSAGE value="对于短信分发逻辑，SmsHandler主要编写逻辑，理清楚渠道账号和对应的模板，调用对应的渠道短信的时候，先去获取配置中心，对权重比可以进行设置，采用负载均衡的思想进行分流，如果模板有对应的渠道就直接用渠道账号的脚本，如果走的是配置中心上的脚本，就采用服务器分发，定义了大致的sms框架逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="对于短信分发逻辑，SmsHandler主要编写逻辑，理清楚渠道账号和对应的模板，调用对应的渠道短信的时候，先去获取配置中心，对权重比可以进行设置，采用负载均衡的思想进行分流，如果模板有对应的渠道就直接用渠道账号的脚本，如果走的是配置中心上的脚本，就采用服务器分发，定义了大致的sms框架逻辑" />
+    <MESSAGE value="对于获取所有改渠道的账号进行遍历找到需要的脚本，编写腾讯云的短信脚本，以及拉取回执信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="对于获取所有改渠道的账号进行遍历找到需要的脚本，编写腾讯云的短信脚本，以及拉取回执信息" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

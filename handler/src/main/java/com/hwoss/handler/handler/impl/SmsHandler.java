@@ -10,14 +10,18 @@ import com.common.domain.TaskInfo;
 import com.common.dto.account.SmsAccount;
 import com.common.dto.model.SmsContentModel;
 import com.common.enums.ChannelType;
+import com.google.common.base.Throwables;
 import com.hwoss.handler.domain.MessageTypeSmsConfig;
 import com.hwoss.handler.domain.SmsParam;
 import com.hwoss.handler.handler.BaseHandler;
 import com.hwoss.handler.handler.Handler;
+import com.hwoss.handler.script.SmsScript;
 import com.hwoss.suport.dao.SmsRecordDao;
+import com.hwoss.suport.domain.SmsRecord;
 import com.hwoss.suport.service.ConfigService;
 import com.hwoss.suport.utils.AccountUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
@@ -58,16 +62,27 @@ public class SmsHandler extends BaseHandler implements Handler {
                 .content(getSmsContent(taskInfo))
                 .phones(taskInfo.getReceivers())
                 .build();
-
+        /*
+         * 1、动态配置做流量负载
+         * 2、发送短信
+         */
         List<MessageTypeSmsConfig> messageTypeSmsConfig = getMessageTypeSmsConfig(taskInfo);
         MessageTypeSmsConfig[] messageTypeSmsConfigs = loadBalance(messageTypeSmsConfig);
-        for (MessageTypeSmsConfig typeSmsConfig : messageTypeSmsConfigs) {
-            smsParam.setScriptName(typeSmsConfig.getScriptName());
-            smsParam.setSendAccountId(typeSmsConfig.getSendAccount());
-//            applicationContext.getBean(messageTypeSmsConfigs.)
+        try {
+            for (MessageTypeSmsConfig typeSmsConfig : messageTypeSmsConfigs) {
+                //            如果发送失败也就是找不到对应的基本就循环找备用的
+                smsParam.setScriptName(typeSmsConfig.getScriptName());
+                smsParam.setSendAccountId(typeSmsConfig.getSendAccount());
+                List<SmsRecord> smsRecords = applicationContext.getBean(typeSmsConfig.getScriptName(), SmsScript.class).send(smsParam);
+                //            数据下发后把信息回执存储在数据库
+                if (CollUtil.isNotEmpty(smsRecords)) {
+                    smsRecordDao.saveAll(smsRecords);
+                    return true;
+                }
+            }
+        } catch (BeansException e) {
+            log.error("SmsHandler#handler fail:{},params:{}", Throwables.getStackTraceAsString(e), JSON.toJSONString(smsParam));
         }
-
-
         return false;
     }
 
