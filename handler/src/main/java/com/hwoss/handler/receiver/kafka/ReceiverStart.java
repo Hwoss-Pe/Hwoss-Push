@@ -75,22 +75,24 @@ public class ReceiverStart {
             context.getBean(Receiver.class);
         }
     }
-
+@Bean
     //配置针对请求头数据进行过滤（可不配置）
     public ConcurrentKafkaListenerContainerFactory filter(@Value("hwoss.business.tagId.key") String tagIdKey, @Value("hwoss.business.tagId.value") String tagIdValue) {
         ConcurrentKafkaListenerContainerFactory factory = new ConcurrentKafkaListenerContainerFactory();
         factory.setConsumerFactory(consumerFactory);
+//        消息被丢弃后也会发送ACK
         factory.setAckDiscarded(true);
         factory.setRecordFilterStrategy(
                 record -> {
                     if (Optional.ofNullable(record.value()).isPresent()) {
+//                        如果找到对应请求头就不丢弃
                         for (Header header : record.headers()) {
                             if (header.key().equals(tagIdKey) && new String(header.value()).equals(tagIdValue)) {
-                                return true;
+                                return false;
                             }
                         }
                     }
-                    return false;
+                    return true;
                 }
         );
         return factory;
