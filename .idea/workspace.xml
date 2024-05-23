@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="对smsHandler设置后，进行发送消息后把数据存储到数据库">
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receipt/MessageReceipt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receipt/ReceiptMessageStater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receipt/impl/SmsPullReceiptStarterImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/config/SupportThreadPoolConfig.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="配置单线程池去拉取短信回执，采用轮询的方式获取，以及健康接口">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/common/domain/SimpleAnchorInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/kafka/Receiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/kafka/ReceiverStart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/TraceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/pojo/TraceResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/service/TraceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/kafka/KafkaSendMqServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/dto/account/SmsAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/dto/account/SmsAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/HealthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/constant/FuncConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/constant/FuncConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitMqAdminConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/rabbitMq/RabbitMqAdminConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/RabbitSendMqServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/rabbitMq/RabbitSendMqServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,36 +56,43 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/ConsumeService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/common/src/main/java/com/common/domain/SimpleTaskInfo.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/SendController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/rabbitMq/RabbitMqAdminConfig.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/TaskInfoUtils.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAssembleBusiness.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/service/SendService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$MAVEN_REPOSITORY$/de/siegmar/logback-gelf/3.0.0/logback-gelf-3.0.0.pom" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendPreCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/web/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAfterCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/common/src/main/java/com/common/enums/AnchorState.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendMQBusiness.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/config/ThreadPoolExecutorShutdownDefinition.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ThreadPoolUtils.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/SendServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/config/PipeLineConfig.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/web/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/service-api-impl/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/handler/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/support/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/ConfigService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/web/src/main/resources/logback.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/impl/ConfigServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ContentHolderUtil.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/utils/ThreadPoolUtils.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/src/main/resources/logback.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/rabbitMq/RabbitSendMqServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/SendMqService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/src/main/resources/local.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/handler/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/serivce/SendServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/ConfigService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendMQBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAfterCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendPreCheckBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/service/impl/ConfigServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/send/SendAssembleBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/business/recall/RecallMQBusiness.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/config/PipeLineConfig.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/pojo/TraceResponse.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/service-api/src/main/java/com/hwoss/service/api/service/SendService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/SendController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/service/ConsumeService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/mq/kafka/KafkaSendMqServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/common/src/main/java/com/common/enums/AnchorState.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/MessageApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/common/src/main/java/com/common/domain/SimpleTaskInfo.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/config/TaskPipelineConfig.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$MAVEN_REPOSITORY$/de/siegmar/logback-gelf/3.0.0/logback-gelf-3.0.0.pom" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/support/src/main/java/com/hwoss/suport/config/ThreadPoolExecutorShutdownDefinition.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/web/KafkaConsumer.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2g5ydCZt57OWtc0CtrY6Whz3kIQ" />
   <component name="ProjectLevelVcsManager">
@@ -123,10 +139,11 @@
       <recent name="D:\messsagePushing\web\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.common.domain" />
+      <recent name="com.hwoss.service.api.pojo" />
       <recent name="com.common.enums" />
       <recent name="com.hwoss.handler.domain" />
       <recent name="com.common.dto.model" />
-      <recent name="com.web" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MessageApplication">
@@ -231,14 +248,10 @@
       <workItem from="1716277617562" duration="3903000" />
       <workItem from="1716283504580" duration="13199000" />
       <workItem from="1716366796362" duration="5466000" />
-      <workItem from="1716376820045" duration="2491000" />
-    </task>
-    <task id="LOCAL-00001" summary="创建项目结构引入Spring框架">
-      <created>1715005234652</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1715005234652</updated>
+      <workItem from="1716376820045" duration="4104000" />
+      <workItem from="1716386713612" duration="5505000" />
+      <workItem from="1716447331036" duration="698000" />
+      <workItem from="1716448247642" duration="10188000" />
     </task>
     <task id="LOCAL-00002" summary="创建项目结构引入Spring框架">
       <created>1715005823503</created>
@@ -576,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716369861819</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="配置单线程池去拉取短信回执，采用轮询的方式获取，以及健康接口">
+      <created>1716379729759</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1716379729759</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +621,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加对应发送mq的样例，这里创建的mq配置类只进行发送，并没有使用@Listener去自动创建，因此进行原始构建，采用的是Topic交换机" />
     <MESSAGE value="增加对应发送mq的样例，这里创建的mq配置类只进行发送，并没有使用@Listener去自动创建，因此进行原始构建，采用的是TopicQueue" />
     <MESSAGE value="这里对于挎包引入对应的自动装配，采用包名一样，然后在配置类进行扫描包设置对应的路径就行" />
     <MESSAGE value="业务链路基本走通，并且正确发送到MQ，查正则替换数据那块没查" />
@@ -626,17 +645,13 @@
     <MESSAGE value="对于短信分发逻辑，SmsHandler主要编写逻辑，理清楚渠道账号和对应的模板，调用对应的渠道短信的时候，先去获取配置中心，对权重比可以进行设置，采用负载均衡的思想进行分流，如果模板有对应的渠道就直接用渠道账号的脚本，如果走的是配置中心上的脚本，就采用服务器分发，定义了大致的sms框架逻辑" />
     <MESSAGE value="对于获取所有改渠道的账号进行遍历找到需要的脚本，编写腾讯云的短信脚本，以及拉取回执信息" />
     <MESSAGE value="对smsHandler设置后，进行发送消息后把数据存储到数据库" />
-    <option name="LAST_COMMIT_MESSAGE" value="对smsHandler设置后，进行发送消息后把数据存储到数据库" />
+    <MESSAGE value="配置单线程池去拉取短信回执，采用轮询的方式获取，以及健康接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置单线程池去拉取短信回执，采用轮询的方式获取，以及健康接口" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/SendController.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java</url>
           <line>43</line>
@@ -644,11 +659,6 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="message" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,6 +1,7 @@
-package com.hwoss.suport.mq;
+package com.hwoss.suport.mq.rabbitMq;
 
 import com.hwoss.suport.Contents.MessageQueuePipeline;
+import com.hwoss.suport.mq.SendMqService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

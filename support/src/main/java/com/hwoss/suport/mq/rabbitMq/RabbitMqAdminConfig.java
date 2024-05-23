@@ -1,8 +1,10 @@
-package com.hwoss.suport.mq;
+package com.hwoss.suport.mq.rabbitMq;
 
+import com.hwoss.suport.Contents.MessageQueuePipeline;
 import org.springframework.amqp.core.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
  * 这个类可能后面不需要的时候要进行注释，或者选择性配置
  */
 @Configuration
+@ConditionalOnProperty(name = "hwoss.mq.pipeline", havingValue = MessageQueuePipeline.RABBIT_MQ)
 public class RabbitMqAdminConfig {
 //    @Value("${hwoss.rabbitmq.routing.send.key}")
 //    private String send_key;
