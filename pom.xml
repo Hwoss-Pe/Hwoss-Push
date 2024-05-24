@@ -115,14 +115,14 @@
             </dependency>
 
 
-            <!--graylog-->
-            <!--            <dependency>-->
-            <!--                <groupId>de.siegmar</groupId>-->
-            <!--                <artifactId>logback-gelf</artifactId>-->
-            <!--                <version>3.0.0</version>-->
-            <!--            </dependency>-->
+            <!--            graylog-->
+            <!--                        <dependency>-->
+            <!--                            <groupId>de.siegmar</groupId>-->
+            <!--                            <artifactId>logback-gelf</artifactId>-->
+            <!--                            <version>3.0.0</version>-->
+            <!--                        </dependency>-->
 
-            <!--xxl-job分布式定时任务-->
+            <!--            xxl-job分布式定时任务-->
             <dependency>
                 <groupId>com.xuxueli</groupId>
                 <artifactId>xxl-job-core</artifactId>
