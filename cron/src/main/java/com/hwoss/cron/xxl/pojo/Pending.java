@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutorService;
 public class Pending<T> {
     //线程池实例
     private ExecutorService executorService;
-    //    阻塞队列
+    //    多线程用阻塞队列安全
     private BlockingQueue<T> queue;
     //    触发的阈值
     private Integer numThreshold;

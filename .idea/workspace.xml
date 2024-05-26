@@ -4,22 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="定时任务处理的线程池">
-      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/constants/PendingConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/service/TaskHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/service/impl/TaskHandlerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/config/XxlJobConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/pojo/Pending.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/pojo/XxlJobInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="xxl-job接入配置">
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/constant/XxlJobConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/enums/ExecutorRouteStrategyEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/enums/GlueTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/enums/MisfireStrategyEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/enums/ScheduleTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/pojo/XxlJobGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/service/CronTaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/service/impl/CronTaskServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/utils/XxlJobUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cron/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cron/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/handler/CronTaskHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/handler/CronTaskHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/constant/CommonConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/constant/CommonConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/config/XxlJobConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/config/XxlJobConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/pojo/Pending.java" beforeDir="false" afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/pojo/Pending.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +125,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="SELECTIVE" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xxl-job-2.0.2/xxl-job-2.0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xxl-job-2.3.0/xxl-job-2.3.0" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -143,14 +142,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\messsagePushing\cron\src\main\java\com\hwoss\cron\xxl" />
       <recent name="D:\messsagePushing\web\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hwoss.cron.xxl.constant" />
+      <recent name="com.hwoss.cron.xxl.pojo" />
       <recent name="com.hwoss.cron.xxl" />
       <recent name="com.hwoss.cron.constants" />
       <recent name="com.common.domain" />
-      <recent name="com.hwoss.service.api.pojo" />
-      <recent name="com.common.enums" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MessageApplication">
@@ -167,13 +167,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -260,14 +262,8 @@
       <workItem from="1716447331036" duration="698000" />
       <workItem from="1716448247642" duration="17142000" />
       <workItem from="1716537374215" duration="2819000" />
-      <workItem from="1716542384000" duration="3596000" />
-    </task>
-    <task id="LOCAL-00005" summary="修改日志不输出，springProfile全责">
-      <created>1715159539843</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1715159539843</updated>
+      <workItem from="1716542384000" duration="9131000" />
+      <workItem from="1716710968470" duration="5566000" />
     </task>
     <task id="LOCAL-00006" summary="连接数据库用5.7，阿里云服务器配置，并且必须注释掉dtp动态线程池的相关依赖">
       <created>1715181508452</created>
@@ -605,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716480708632</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="xxl-job接入配置">
+      <created>1716551031324</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1716551031324</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +633,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="单个消息发送业务完成" />
     <MESSAGE value="消息撤回下发到mq完成" />
     <MESSAGE value="kafka测试，kafka的接入思路是一个topic多个消费组去消费，然后再去开线程池" />
     <MESSAGE value="增加线程池配置类，把线程池交给spring管理进行优雅关闭&#10;编写一点消费类service" />
@@ -655,7 +657,8 @@
     <MESSAGE value="编写kafka消费类，这里去处理信息的思路单topic多消费者组&#10;对于每个topic用他们的渠道加消息类型构成，ReceiverStart去初始化的时候获取Receiver的所有对应的实例，对于每个实例采用AnnotationEnhancer去增强KafkaListener注解，获取类名.方法的形式然后把原本KafkaListener属性groupId的属性值进行初始化，那么这样容器里面就有消费不同topic的各种实例" />
     <MESSAGE value="kafka消费的时候通过@Header(KafkaHeaders.GROUP_ID)去获取当前消费者组，通过对比传过来的任务的类型，通过渠道加消息类型也能找到一个消费者组id，对比两个id是否一样进行消费，对于消费组信息的时候要ConsumerRecord&lt;?,String&gt; consumerRecord更加规范，再去转化各种类型，也能防止非空判断的丑代码" />
     <MESSAGE value="定时任务处理的线程池" />
-    <option name="LAST_COMMIT_MESSAGE" value="定时任务处理的线程池" />
+    <MESSAGE value="xxl-job接入配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="xxl-job接入配置" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
