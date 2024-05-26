@@ -1,4 +1,4 @@
-package com.hwoss.cron.xxl.pojo;
+package com.hwoss.pending;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="对xxl-job进行部分实现，对有关执行器组的id获取和构建，工具类的编写，注意版本只有2.3.0进行兼容，这里的操作实际上就是复刻3以下执行器和执行任务的实体类，然后作为参数发送http给到另一个xxl服务进行操作就行">
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="对定时任务的增删改，以及暂停开始的一些封装">
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/csv/CountFileRowHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/handler/CrowdBatchTaskPending.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/utils/ReadFileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/vo/CrowdInfoVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/pending/AbstractLazyPending.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/service/impl/CronTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/service/impl/CronTaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/handler/CronTaskHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/handler/CronTaskHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/service/impl/TaskHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/service/impl/TaskHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/pojo/Pending.java" beforeDir="false" afterPath="$PROJECT_DIR$/support/src/main/java/com/hwoss/pending/Pending.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/pojo/XxlJobInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/pojo/XxlJobInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/utils/XxlJobUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/utils/XxlJobUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,11 +143,11 @@
       <recent name="D:\messsagePushing\web\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hwoss.cron.utils" />
+      <recent name="com.hwoss.cron.vo" />
       <recent name="com.hwoss.cron.xxl.constant" />
       <recent name="com.hwoss.cron.xxl.pojo" />
       <recent name="com.hwoss.cron.xxl" />
-      <recent name="com.hwoss.cron.constants" />
-      <recent name="com.common.domain" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MessageApplication">
@@ -252,14 +260,7 @@
       <workItem from="1716448247642" duration="17142000" />
       <workItem from="1716537374215" duration="2819000" />
       <workItem from="1716542384000" duration="9131000" />
-      <workItem from="1716710968470" duration="10216000" />
-    </task>
-    <task id="LOCAL-00008" summary="创建BasicResultVo作为返回类型共业务层调用，并且数据从RespStatusEnum枚举里面获得&#10;这里优雅的写法就是链式调用多用this关键字进行当前对象的调用，以及以后这种含数据的最终返回类型用泛型解决不要去用Object">
-      <created>1715269384134</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1715269384134</updated>
+      <workItem from="1716710968470" duration="20583000" />
     </task>
     <task id="LOCAL-00009" summary="创建BasicResultVo作为返回类型共业务层调用，并且数据从RespStatusEnum枚举里面获得&#10;这里优雅的写法就是链式调用多用this关键字进行当前对象的调用，以及以后这种含数据的最终返回类型用泛型解决不要去用Object">
       <created>1715269592263</created>
@@ -597,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716719818648</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="对定时任务的增删改，以及暂停开始的一些封装">
+      <created>1716722049135</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1716722049135</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +630,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加线程池配置类，把线程池交给spring管理进行优雅关闭&#10;编写一点消费类service" />
     <MESSAGE value="记录bug：某些依赖必须在父工程引入后才能在子工程引入，比如&#10; &lt;dependency&gt;&#10;                            &lt;groupId&gt;io.github.lyh200&lt;/groupId&gt;&#10;                            &lt;artifactId&gt;dynamic-tp-spring-boot-starter-apollo&lt;/artifactId&gt;&#10;                            &lt;version&gt;1.0.2&lt;/version&gt;&#10;                        &lt;/dependency&gt;&#10;也可能是其他问题导致，恶心" />
     <MESSAGE value="做了两个map映射，一个是渠道和对应的处理器，一个是渠道和对应的线程池，在启动时就把对应的渠道消息和动态线程池都加进去&#10;这里补充动态线程池的做法，当创建对应的线程池后，交给Dtp进行注册，然后再给spring也注册，spring通过监听关闭事件来进行处理优雅关闭&#10;然后在TaskPipelineConfig大致定义了handler处理类责任链模式逻辑，注意引入不同的ProcessController，通过不同的业务，来指定引入不同的bean，然后封装好对应的业务逻辑，然后定义多线程消费对应的数据Task&#10;业务逻辑就是启动的时候注册多个ProcessController，进行map的多层映射，然后在service引入不同的对象，就可以执行不同逻辑&#10;&#10;最后进入了monitor4all.logRecord进行一个切面日志的原理，减少代码入侵转而用一种注解的方式实现" />
     <MESSAGE value="需要接入redis，但不知道是dtp还是log包需要强依赖于redis" />
@@ -647,7 +654,8 @@
     <MESSAGE value="xxl-job接入配置" />
     <MESSAGE value="对xxl-job进行部分实现，对有关执行器组的id获取和构建，工具类的编写，注意版本只有2.3.0进行兼容" />
     <MESSAGE value="对xxl-job进行部分实现，对有关执行器组的id获取和构建，工具类的编写，注意版本只有2.3.0进行兼容，这里的操作实际上就是复刻3以下执行器和执行任务的实体类，然后作为参数发送http给到另一个xxl服务进行操作就行" />
-    <option name="LAST_COMMIT_MESSAGE" value="对xxl-job进行部分实现，对有关执行器组的id获取和构建，工具类的编写，注意版本只有2.3.0进行兼容，这里的操作实际上就是复刻3以下执行器和执行任务的实体类，然后作为参数发送http给到另一个xxl服务进行操作就行" />
+    <MESSAGE value="对定时任务的增删改，以及暂停开始的一些封装" />
+    <option name="LAST_COMMIT_MESSAGE" value="对定时任务的增删改，以及暂停开始的一些封装" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

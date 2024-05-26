@@ -69,7 +69,7 @@ public class XxlJobInfo implements Serializable {
      */
     private String executorHandler;
     /**
-     * 执行器，任务参数
+     * 执行器，任务参数，这个参数穿的是模板id，在执行定时任务的时候会获取
      */
     private String executorParam;
 

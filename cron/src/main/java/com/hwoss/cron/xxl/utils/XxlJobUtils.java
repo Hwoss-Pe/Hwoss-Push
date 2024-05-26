@@ -52,7 +52,7 @@ public class XxlJobUtils {
                 .scheduleType(ScheduleTypeEnum.CRON.name())
                 .misfireStrategy(MisfireStrategyEnum.DO_NOTHING.name())
                 .executorRouteStrategy(ExecutorRouteStrategyEnum.CONSISTENT_HASH.name())
-//                执行器配置相关
+//                执行器配置相关，这里把参数设置成对应模板的id
                 .executorHandler(XxlJobConstant.JOB_HANDLER_NAME)
                 .executorParam(String.valueOf(messageTemplate.getId()))
                 .executorBlockStrategy(ExecutorBlockStrategyEnum.SERIAL_EXECUTION.name())
