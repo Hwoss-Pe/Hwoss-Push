@@ -30,19 +30,19 @@ import java.util.Optional;
 @ConditionalOnProperty(name = "hwoss.mq.pipeline", havingValue = MessageQueuePipeline.KAFKA)
 public class Receiver {
 
-    @Value("hwoss.business.topic.name")
+    @Value("${hwoss.business.topic.name}")
     String topicSendName;
 
-    @Value("hwoss.business.recall.topic.name")
+    @Value("${hwoss.business.recall.topic.name}")
     String topicRecallName;
 
-    @Value("hwoss.business.recall.group.name")
+    @Value("${hwoss.business.recall.group.name}")
     String recallGroupName;
 
     @Autowired
     private ConsumeService consumeService;
 
-    @KafkaListener(topics = "${hwoss.business.topic.name}", containerFactory = "filter")
+    @KafkaListener(topics = "#{'${hwoss.business.topic.name}'}")
 //    消费的类型key做泛型，value做String，提高可用性，可以做转换检查，后面用Optional转String
     public void consumer(ConsumerRecord<?, String> consumerRecord, @Header(KafkaHeaders.GROUP_ID) String topicGroupId) {
         Optional<String> value = Optional.ofNullable(consumerRecord.value());

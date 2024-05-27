@@ -31,22 +31,22 @@ public class DeduplicationBusiness implements BusinessProcess<TaskInfo> {
 
     @Override
     public void process(ProcessContext<TaskInfo> context) {
-        TaskInfo taskInfo = context.getProcessModel();
-        // 配置样例{"deduplication_10":{"num":1,"time":300},"deduplication_20":{"num":5}}
-        String deduplicationConfig = config.getProperty(DEDUPLICATION_RULE_KEY, CommonConstant.EMPTY_JSON_OBJECT);
-        //获取所有所有的去重逻辑
-        List<Integer> deduplicationList = EnumsUtils.getCodeList(DeduplicationType.class);
-        for (Integer deduplicationType : deduplicationList) {
-//            只需要传入对应的配置,获取对应配置词条进行赋值，和taskInfo就可以得到deduplicationParam
-            DeduplicationParam deduplicationParam = deduplicationHolder.selectBuilder(deduplicationType).build(deduplicationConfig, taskInfo);
-            if (Objects.nonNull(deduplicationParam)) {
-//                然后独一
-                deduplicationHolder.selectService(deduplicationType).deduplication(deduplicationParam);
-            }
-        }
-
-        if (CollUtil.isEmpty(taskInfo.getReceivers())) {
-            context.setIsBreak(true);
-        }
+//        TaskInfo taskInfo = context.getProcessModel();
+//        // 配置样例{"deduplication_10":{"num":1,"time":300},"deduplication_20":{"num":5}}
+//        String deduplicationConfig = config.getProperty(DEDUPLICATION_RULE_KEY, CommonConstant.EMPTY_JSON_OBJECT);
+//        //获取所有所有的去重逻辑
+//        List<Integer> deduplicationList = EnumsUtils.getCodeList(DeduplicationType.class);
+//        for (Integer deduplicationType : deduplicationList) {
+////            只需要传入对应的配置,获取对应配置词条进行赋值，和taskInfo就可以得到deduplicationParam
+//            DeduplicationParam deduplicationParam = deduplicationHolder.selectBuilder(deduplicationType).build(deduplicationConfig, taskInfo);
+//            if (Objects.nonNull(deduplicationParam)) {
+////                然后独一
+//                deduplicationHolder.selectService(deduplicationType).deduplication(deduplicationParam);
+//            }
+//        }
+//
+//        if (CollUtil.isEmpty(taskInfo.getReceivers())) {
+//            context.setIsBreak(true);
+//        }
     }
 }

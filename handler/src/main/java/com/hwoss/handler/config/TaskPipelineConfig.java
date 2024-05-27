@@ -2,6 +2,10 @@ package com.hwoss.handler.config;
 
 import com.common.pipeline.ProcessController;
 import com.common.pipeline.ProcessTemplate;
+import com.hwoss.handler.business.DeduplicationBusiness;
+import com.hwoss.handler.business.DiscardBusiness;
+import com.hwoss.handler.business.SendMessageAction;
+import com.hwoss.handler.business.ShieldBusiness;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -23,19 +27,19 @@ import java.util.Map;
 @Configuration
 public class TaskPipelineConfig {
     public static final String PIPELINE_HANDLER_CODE = "handler";
-//    @Autowired
-//    private DiscardAction discardAction;
-//    @Autowired
-//    private ShieldAction shieldAction;
-//    @Autowired
-//    private DeduplicationAction deduplicationAction;
-//    @Autowired
-//    private SendMessageAction sendMessageAction;
+    @Autowired
+    private DiscardBusiness discardAction;
+    @Autowired
+    private ShieldBusiness shieldAction;
+    @Autowired
+    private DeduplicationBusiness deduplicationAction;
+    @Autowired
+    private SendMessageAction sendMessageAction;
 
     @Bean("taskTemplate")
     public ProcessTemplate taskTemplate() {
         ProcessTemplate processTemplate = new ProcessTemplate();
-//        processTemplate.setBusinessProcessList(Arrays.asList(discardAction, shieldAction, deduplicationAction, sendMessageAction));
+        processTemplate.setBusinessProcessList(Arrays.asList(discardAction, shieldAction, deduplicationAction, sendMessageAction));
         return processTemplate;
     }
 

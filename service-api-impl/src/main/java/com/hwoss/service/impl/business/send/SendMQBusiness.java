@@ -24,11 +24,13 @@ public class SendMQBusiness implements BusinessProcess<SendTaskModel> {
 
     @Autowired
     private SendMqService sendMqService;
-    @Value("${hwoss.rabbitmq.routing.message.key}")
-    private String key;
+//    @Value("${hwoss.rabbitmq.routing.message.key}")
+//    private String key;
 //    @Value("${hwoss.rabbitmq.exchange.name}")
 //    private String exchangeName;
 
+    @Value("${hwoss.business.topic.name}")
+    String topicSendName;
     @Value("${hwoss.business.tagId.value}")
     private String tagId;
 
@@ -45,7 +47,7 @@ public class SendMQBusiness implements BusinessProcess<SendTaskModel> {
         //序列化的方式采用的是记录对象的类，到时还原的时候更加准确
         try {
             String message = JSON.toJSONString(taskInfoList, SerializerFeature.WriteClassName);
-            sendMqService.send(key, message, tagId);
+            sendMqService.send(topicSendName, message, tagId);
         } catch (Exception e) {
             context.setIsBreak(true).setResponse(BasicResultVo.fail(RespStatusEnum.SERVICE_ERROR));
             log.error("send {} fail! e:{},params:{}", mqPipeline, Throwables.getStackTraceAsString(e)

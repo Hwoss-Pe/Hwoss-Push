@@ -44,29 +44,31 @@ public class ShieldBusiness implements BusinessProcess<TaskInfo> {
     @Override
     public void process(ProcessContext<TaskInfo> context) {
         TaskInfo taskInfo = context.getProcessModel();
-        if (taskInfo.getShieldType().equals(ShieldType.NIGHT_SHIELD.getCode())) {
-            logUtils.print(AnchorInfo.builder()
-                                   .businessId(taskInfo.getBusinessId())
-                                   .bizId(taskInfo.getBizId())
-                                   .messageId(taskInfo.getMessageId())
-                                   .state(AnchorState.NIGHT_SHIELD.getCode())
-                                   .logTimestamp(System.currentTimeMillis())
-                                   .ids(taskInfo.getReceivers())
-                                   .build());
+        if (ShieldType.NIGHT_NO_SHIELD.getCode().equals(taskInfo.getShieldType())) {
             return;
         }
+
         if (LocalDateTime.now().getHour() < NIGHT) {
+
+            if (taskInfo.getShieldType().equals(ShieldType.NIGHT_SHIELD.getCode())) {
+                logUtils.print(AnchorInfo.builder()
+                                       .businessId(taskInfo.getBusinessId())
+                                       .bizId(taskInfo.getBizId())
+                                       .messageId(taskInfo.getMessageId())
+                                       .state(AnchorState.NIGHT_SHIELD.getCode())
+                                       .logTimestamp(System.currentTimeMillis())
+                                       .ids(taskInfo.getReceivers())
+                                       .build());
+            }
+
             if (taskInfo.getShieldType().equals(ShieldType.NIGHT_SHIELD_BUT_NEXT_DAY_SEND.getCode())) {
                 redisUtils.lPush(NIGHT_SHIELD_BUT_NEXT_DAY_SEND_KEY,
                                  JSON.toJSONString(taskInfo, SerializerFeature.WriteClassName)
                         , SECONDS_OF_A_DAY);
                 logUtils.print(AnchorInfo.builder().state(AnchorState.NIGHT_SHIELD_NEXT_SEND.getCode()).bizId(taskInfo.getBizId()).messageId(taskInfo.getMessageId()).businessId(taskInfo.getBusinessId()).ids(taskInfo.getReceivers()).build());
             }
-            if (ShieldType.NIGHT_SHIELD.getCode().equals(taskInfo.getShieldType())) {
-                logUtils.print(AnchorInfo.builder().state(AnchorState.NIGHT_SHIELD.getCode())
-                                       .bizId(taskInfo.getBizId()).messageId(taskInfo.getMessageId()).businessId(taskInfo.getBusinessId()).ids(taskInfo.getReceivers()).build());
-            }
+            context.setIsBreak(true);
         }
-        context.setIsBreak(true);
+
     }
 }

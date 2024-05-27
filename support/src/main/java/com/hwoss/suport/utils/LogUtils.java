@@ -47,12 +47,12 @@ public class LogUtils extends CustomLogListener {
         String message = JSON.toJSONString(anchorInfo);
         log.info(message);
 //        这里要发送日志到mq里面，后面可以进行收集，不过key得改队列，因此这里的东西建议在kafka实现后弄
-//        try {
-//            mqService.send(topicName, message);
-//        } catch (Exception e) {
-//            log.error("LogUtils#print send mq fail! e:{},params:{}", Throwables.getStackTraceAsString(e)
-//                    , JSON.toJSONString(anchorInfo));
-//        }
+        try {
+            mqService.send(topicName, message);
+        } catch (Exception e) {
+            log.error("LogUtils#print send mq fail! e:{},params:{}", Throwables.getStackTraceAsString(e)
+                    , JSON.toJSONString(anchorInfo));
+        }
     }
 
     /**

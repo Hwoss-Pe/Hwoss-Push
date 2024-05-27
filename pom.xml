@@ -23,6 +23,15 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <flink.version>1.14.3</flink.version>
+        <target.java.version>1.8</target.java.version>
+        <scala.binary.version>2.11</scala.binary.version>
+        <maven.compiler.source>${target.java.version}</maven.compiler.source>
+        <maven.compiler.target>${target.java.version}</maven.compiler.target>
+        <log4j.version>2.17.1</log4j.version>
+        <weixin-java>4.5.3.B</weixin-java>
     </properties>
 
 
@@ -82,7 +91,7 @@
             <!--nacos-->
             <dependency>
                 <groupId>com.alibaba.boot</groupId>
-                <artifactId>nacos-config-spring-boot-starter</artifactId>
+                <artifactId>nacos-com.hwoss.config-spring-boot-starter</artifactId>
                 <version>0.2.12</version>
             </dependency>
 
@@ -130,30 +139,30 @@
             </dependency>
 
             <!--                        &lt;!&ndash;flink相关依赖&ndash;&gt;-->
-            <!--                        <dependency>-->
-            <!--                            <groupId>org.apache.flink</groupId>-->
-            <!--                            <artifactId>flink-walkthrough-common_${scala.binary.version}</artifactId>-->
-            <!--                            <version>${flink.version}</version>-->
-            <!--                        </dependency>-->
-            <!--                        <dependency>-->
-            <!--                            <groupId>org.apache.flink</groupId>-->
-            <!--                            <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>-->
-            <!--                            <version>${flink.version}</version>-->
-            <!--                            <scope>provided</scope>-->
-            <!--                        </dependency>-->
-            <!--                        <dependency>-->
-            <!--                            <groupId>org.apache.flink</groupId>-->
-            <!--                            <artifactId>flink-clients_${scala.binary.version}</artifactId>-->
-            <!--                            <version>${flink.version}</version>-->
-            <!--                            <scope>provided</scope>-->
-            <!--                        </dependency>-->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-walkthrough-common_${scala.binary.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
+                <version>${flink.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-clients_${scala.binary.version}</artifactId>
+                <version>${flink.version}</version>
+                <scope>provided</scope>
+            </dependency>
 
-            <!--            &lt;!&ndash;kafkaFlink连接器&ndash;&gt;-->
-            <!--            <dependency>-->
-            <!--                <groupId>org.apache.flink</groupId>-->
-            <!--                <artifactId>flink-connector-kafka_${scala.binary.version}</artifactId>-->
-            <!--                <version>${flink.version}</version>-->
-            <!--            </dependency>-->
+            <!--kafkaFlink连接器-->
+            <dependency>
+                <groupId>org.apache.flink</groupId>
+                <artifactId>flink-connector-kafka_${scala.binary.version}</artifactId>
+                <version>${flink.version}</version>
+            </dependency>
 
             <!--目前没有完善RabbitMQ实现-->
             <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-connector-rabbitmq -->
