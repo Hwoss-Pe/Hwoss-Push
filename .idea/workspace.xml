@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="完成xxl夜间屏蔽任务的逻辑，时间到就消费redis里面的key对应list进行一个延迟缓冲发送，在配置类会去创建对应的夜间HwossJob，SendJob没有实现，逻辑一样的，不多写代码http://localhost:8080/xxl-job-admin直接去创建会更加方便">
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/aspect/LogAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/aspect/LogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/aspect/ResponseAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/aspect/ResultAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/config/CrossConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/vo/RequestLogDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/config/NightShieldConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/config/NightShieldConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="把返回信息统一，以及对controller的日志实现都用注解的切面实现方式" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -274,14 +262,7 @@
       <workItem from="1716811685681" duration="12412000" />
       <workItem from="1716876694099" duration="133000" />
       <workItem from="1716876855214" duration="10006000" />
-      <workItem from="1716900416115" duration="3864000" />
-    </task>
-    <task id="LOCAL-00013" summary="责任链接口的实现设计，自定义责任链异常处理">
-      <created>1715335275986</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1715335275986</updated>
+      <workItem from="1716900416115" duration="4204000" />
     </task>
     <task id="LOCAL-00014" summary="编写责任链ProcessController，并且做预检查，也就是ProcessTemplate(某个责任链模板)，通过责任链去获取业务列表List&lt;BusinessProcess&gt;&#10;再去获取对应的模板获取业务列表然后执行，泛化问题不知道是否有影响代码运行，还没调试">
       <created>1715344507072</created>
@@ -619,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716890443560</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="把返回信息统一，以及对controller的日志实现都用注解的切面实现方式">
+      <created>1716905218424</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1716905218425</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +632,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="实现消费的接口，对于撤回直接执行，对于发送去走一遍责任链" />
     <MESSAGE value="编写redis工具封装类，以及配置中心配置名单过滤，编写lua脚本" />
     <MESSAGE value="编写夜间屏蔽逻辑，以及对去重的初步实现，注意设计模式和抽象类的运用" />
     <MESSAGE value="完成两个去重要求的逻辑，以及lua脚本理解编写" />
@@ -669,7 +656,8 @@
     <MESSAGE value="人群文件上传以及controller" />
     <MESSAGE value="接入flink到springboot，这里还是编写完成stream模块，单纯启动他会给一个随机端口作为web页面打开就能看到运行，用flink把之前log.print的锚点信息进行处理，HwossSink去实现SinkFunction&lt;AnchorInfo&gt;，把字符串读到后处理成这个类，然后把数据存入redis里面，这样就到时就能直接链路追踪的时候直接访问redis，分模块操作，他们之间通过kafka的log队列读到信息，并让flink结合kafka，读到信息后就写到redis里面&#10;&#10;修复一下文件读取bug以及发送逻辑的责任链，夜间屏蔽逻辑" />
     <MESSAGE value="完成xxl夜间屏蔽任务的逻辑，时间到就消费redis里面的key对应list进行一个延迟缓冲发送，在配置类会去创建对应的夜间HwossJob，SendJob没有实现，逻辑一样的，不多写代码http://localhost:8080/xxl-job-admin直接去创建会更加方便" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成xxl夜间屏蔽任务的逻辑，时间到就消费redis里面的key对应list进行一个延迟缓冲发送，在配置类会去创建对应的夜间HwossJob，SendJob没有实现，逻辑一样的，不多写代码http://localhost:8080/xxl-job-admin直接去创建会更加方便" />
+    <MESSAGE value="把返回信息统一，以及对controller的日志实现都用注解的切面实现方式" />
+    <option name="LAST_COMMIT_MESSAGE" value="把返回信息统一，以及对controller的日志实现都用注解的切面实现方式" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
