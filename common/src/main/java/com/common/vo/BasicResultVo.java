@@ -40,7 +40,7 @@ public final class BasicResultVo<T> {
     public BasicResultVo(RespStatusEnum status, T data) {
         this.status = status.getCode();
         this.msg = status.getMsg();
-        this.data = null;
+        this.data = data;
     }
 
     /**
@@ -82,7 +82,7 @@ public final class BasicResultVo<T> {
      * 用于对自定义成功数据的调用
      */
     public static <T> BasicResultVo<T> success(T data) {
-        return new BasicResultVo<T>(RespStatusEnum.SUCCESS, data);
+        return new BasicResultVo<>(RespStatusEnum.SUCCESS, data);
     }
 
     /**

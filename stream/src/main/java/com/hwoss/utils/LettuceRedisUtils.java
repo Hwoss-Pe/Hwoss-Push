@@ -23,12 +23,11 @@ public class LettuceRedisUtils {
     /**
      * 初始化 redisClient
      */
-    private static RedisClient redisClient;
+    private static final RedisClient redisClient;
 
     static {
         RedisURI redisUri = RedisURI.Builder.redis(FlinkConstant.REDIS_IP)
-                .withPort(Integer.valueOf(FlinkConstant.REDIS_PORT))
-//                .withPassword(FlinkConstant.REDIS_PASSWORD.toCharArray())
+                .withPort(Integer.parseInt(FlinkConstant.REDIS_PORT))
                 .build();
         redisClient = RedisClient.create(redisUri);
     }

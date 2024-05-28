@@ -61,4 +61,10 @@ public interface CronTaskService {
      */
     BasicResultVo createGroup(XxlJobGroup xxlJobGroup);
 
+    void invalidateCookie();
+
+    String getCookie();
+
+    boolean isCreated(int jobGroup, int triggerStatus, String jobDesc, String executorHandler, String author);
+
 }

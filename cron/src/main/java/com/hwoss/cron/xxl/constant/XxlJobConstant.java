@@ -16,11 +16,13 @@ public class XxlJobConstant {
     public static final String DELETE_URL = "/jobinfo/remove";
     public static final String RUN_URL = "/jobinfo/start";
     public static final String STOP_URL = "/jobinfo/stop";
+
     /**
      * 执行器组接口路径
      */
     public static final String JOB_GROUP_PAGE_LIST = "/jobgroup/pageList";
     public static final String JOB_GROUP_INSERT_URL = "/jobgroup/save";
+    public static final String GET_INFO = "/jobinfo/pageList";
     /**
      * 执行任务名称
      */

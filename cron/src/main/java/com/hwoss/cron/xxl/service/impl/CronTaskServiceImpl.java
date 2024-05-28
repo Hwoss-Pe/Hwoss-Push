@@ -6,6 +6,7 @@ import cn.hutool.http.HttpException;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.common.enums.RespStatusEnum;
 import com.common.vo.BasicResultVo;
 import com.google.common.base.Throwables;
@@ -152,8 +153,9 @@ public class CronTaskServiceImpl implements CronTaskService {
         params.put("appname", appName);
         params.put("title", title);
         HttpResponse response = null;
+        String cookie = getCookie();
         try {
-            response = HttpRequest.post(path).form(params).cookie(getCookie()).execute();
+            response = HttpRequest.post(path).form(params).cookie(cookie).execute();
             if (Objects.isNull(response)) {
                 return BasicResultVo.fail(RespStatusEnum.SERVICE_ERROR);
             }
@@ -193,6 +195,7 @@ public class CronTaskServiceImpl implements CronTaskService {
 
 
     //每次请求xxl的时候都会进行cookie的访问获取，然后进行销毁
+    @Override
     public String getCookie() {
         //判断redis里面是否有对应的数据
         String cookie = redisTemplate.opsForValue().get(XxlJobConstant.COOKIE_PREFIX + xxlUserName);
@@ -227,7 +230,39 @@ public class CronTaskServiceImpl implements CronTaskService {
     /**
      * 清除缓存的 cookie
      */
-    private void invalidateCookie() {
+    @Override
+    public void invalidateCookie() {
         redisTemplate.delete(XxlJobConstant.COOKIE_PREFIX + xxlUserName);
+    }
+
+    @Override
+    public boolean isCreated(int jobGroup, int triggerStatus, String jobDesc, String executorHandler, String author) {
+        String path = xxlAddresses + XxlJobConstant.GET_INFO;
+        Map<String, Object> params = new HashMap<>();
+        params.put("jobGroup", String.valueOf(jobGroup));
+        params.put("triggerStatus", String.valueOf(triggerStatus));
+        params.put("jobDesc", jobDesc);
+        params.put("executorHandler", executorHandler);
+        params.put("author", author);
+
+
+        HttpResponse response;
+        ReturnT returnT = null;
+        try {
+            response = HttpRequest.post(path).form(params).cookie(getCookie()).execute();
+            JSONObject jsonObject = JSON.parseObject(response.body());
+            Integer recordsFiltered = Integer.valueOf(jsonObject.getString("recordsFiltered"));
+            if (recordsFiltered > 0) {
+                return true;
+            }
+
+        } catch (Exception e) {
+            log.error("CronTaskService#createGroup fail,e:{},param:{},response:{}", Throwables.getStackTraceAsString(e)
+                    , JSON.toJSONString(params), JSON.toJSONString(returnT));
+        } finally {
+            invalidateCookie();
+        }
+
+        return false;
     }
 }
