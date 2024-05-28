@@ -34,6 +34,7 @@ public class TraceServiceImpl implements TraceService {
      * @return {@link TraceResponse }
      */
     @Override
+//    这个在sink就存进对应的redis，这里会保存messageId 3天
     public TraceResponse traceByMessageId(String messageId) {
         if (Objects.isNull(messageId)) {
             return new TraceResponse(RespStatusEnum.CLIENT_BAD_PARAMETER.getCode(), RespStatusEnum.CLIENT_BAD_PARAMETER.getMsg(), null);
@@ -50,6 +51,7 @@ public class TraceServiceImpl implements TraceService {
                 .collect(Collectors.toList());
 
         return new TraceResponse(RespStatusEnum.SUCCESS.getCode(), RespStatusEnum.SUCCESS.getMsg(), sortAnchorList);
+
 
     }
 }

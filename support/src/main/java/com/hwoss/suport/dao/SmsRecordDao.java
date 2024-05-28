@@ -14,5 +14,5 @@ public interface SmsRecordDao extends JpaRepository<SmsRecord, Long> {
      * @param sendDate
      * @return
      */
-    List<SmsRecord> findAllByPhoneEqualsAndSendDateEquals(Long phone, Integer sendDate);
+    List<SmsRecord> findByPhoneAndSendDate(Long phone, Integer sendDate);
 }

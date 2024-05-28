@@ -3,7 +3,6 @@ package com.hwoss.cron.xxl.enums;
 /**
  * 调度类型
  *
- * @author 3y
  */
 public enum ScheduleTypeEnum {
 

@@ -4,7 +4,6 @@ package com.hwoss.cron.xxl.constant;
 /**
  * xxl-job常量信息
  *
- * @author 3y
  */
 public class XxlJobConstant {
     /**

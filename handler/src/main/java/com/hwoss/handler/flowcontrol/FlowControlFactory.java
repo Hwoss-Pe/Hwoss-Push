@@ -68,7 +68,6 @@ public class FlowControlFactory implements ApplicationContextAware {
      * <p>
      * apollo配置样例     key：flowControl value：{"flow_control_40":1}
      * <p>
-     * 渠道枚举可看：com.java3y.austin.common.enums.ChannelType
      *
      * @param channelCode
      */

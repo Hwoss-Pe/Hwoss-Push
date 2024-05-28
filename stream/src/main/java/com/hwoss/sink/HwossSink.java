@@ -34,6 +34,7 @@ public class HwossSink implements SinkFunction<AnchorInfo> {
 
     /**
      * 实时数据存入Redis
+     * 0.构建messageId维度的链路信息  保留3天
      * 1.用户维度(查看用户当天收到消息的链路详情)，数量级大，只保留当天
      * 2.消息模板维度(查看消息模板整体下发情况)，数量级小，保留30天
      *

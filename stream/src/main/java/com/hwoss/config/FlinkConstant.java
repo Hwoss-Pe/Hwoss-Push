@@ -3,7 +3,6 @@ package com.hwoss.config;
 /**
  * Flink常量信息
  *
- * @author 3y
  */
 public class FlinkConstant {
     /**
