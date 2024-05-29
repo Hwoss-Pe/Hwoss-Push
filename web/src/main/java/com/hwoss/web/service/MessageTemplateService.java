@@ -2,6 +2,7 @@ package com.hwoss.web.service;
 
 import com.common.vo.BasicResultVo;
 import com.hwoss.suport.domain.MessageTemplate;
+import com.hwoss.web.vo.MessageTemplateParam;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -58,5 +59,8 @@ public interface MessageTemplateService {
      * @return
      */
     BasicResultVo stopCronTask(Long id);
+
+    //    只能查看自己创建的并且没被删除的
+    List<MessageTemplate> queryList(MessageTemplateParam messageTemplateParam);
 
 }

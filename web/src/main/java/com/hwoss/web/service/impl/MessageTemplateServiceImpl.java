@@ -16,10 +16,21 @@ import com.hwoss.cron.xxl.utils.XxlJobUtils;
 import com.hwoss.suport.dao.MessageTemplateDao;
 import com.hwoss.suport.domain.MessageTemplate;
 import com.hwoss.web.service.MessageTemplateService;
+import com.hwoss.web.vo.MessageTemplateParam;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -176,5 +187,35 @@ public class MessageTemplateServiceImpl implements MessageTemplateService {
             cronTaskService.saveCronTask(xxlJobInfo);
             cronTaskService.stopCronTask(messageTemplate.getCronTaskId());
         }
+    }
+
+    @Override
+    public List<MessageTemplate> queryList(MessageTemplateParam param) {
+//        传页码进来和单页数更新pageRequest
+//                       页码-1
+        PageRequest pageRequest = PageRequest.of(param.getPage() - 1, param.getPerPage());
+        String creator = CharSequenceUtil.isBlank(param.getCreator()) ? FuncConstant.DEFAULT_CREATOR : param.getCreator();
+
+        Page<MessageTemplate> messageTemplatePage = messageTemplateDao.findAll(new Specification<MessageTemplate>() {
+            @Override
+//            单体，定制查询，构建查询
+            public Predicate toPredicate(@NotNull Root<MessageTemplate> root, @NotNull CriteriaQuery<?> query, @NotNull CriteriaBuilder criteriaBuilder) {
+                List<Predicate> list = new ArrayList<>();
+//                增加搜索条件
+                if (CharSequenceUtil.isNotBlank(param.getKeywords())) {
+                    list.add(criteriaBuilder.like(root.get("name").as(String.class), "%" + param.getKeywords() + "%"));
+                }
+                list.add(criteriaBuilder.equal(root.get("isDeleted").as(Integer.class), CommonConstant.FALSE));
+                list.add(criteriaBuilder.equal(root.get("creator").as(String.class), creator));
+                Predicate[] p = new Predicate[list.size()];
+
+                query.where(criteriaBuilder.and(list.toArray(p)));
+                query.orderBy(criteriaBuilder.desc(root.get("updated")));
+
+                return query.getRestriction();
+            }
+        }, pageRequest);
+        List<MessageTemplate> content = messageTemplatePage.getContent();//查询的数据
+        return content;
     }
 }

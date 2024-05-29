@@ -22,9 +22,6 @@ public enum RespStatusEnum {
     ERROR_400("400", "请求发生错误"),
 
 
-    /**
-     * TODO 这里进行了更改他的状态响应码，如果后续数据库配对不上可以返回
-     */
     SUCCESS("1", "调用成功"),
     FAIL("0", "调用失败"),
 
