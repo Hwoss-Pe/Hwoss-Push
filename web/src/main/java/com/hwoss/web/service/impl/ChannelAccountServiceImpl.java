@@ -20,6 +20,7 @@ public class ChannelAccountServiceImpl implements ChannelAccountService {
 
     @Override
     public ChannelAccount save(ChannelAccount channelAccount) {
+//        如果存在id就进行创建，没有就进行保存，本质上操作是一样的
         if (Objects.isNull(channelAccount.getId())) {
             channelAccount.setCreated(Math.toIntExact(DateUtil.currentSeconds()));
             channelAccount.setIsDeleted(CommonConstant.FALSE);

@@ -11,4 +11,12 @@ public class FuncConstant {
      */
     public static final String CACHE_KEY_PREFIX = "Hwoss";
     public static final String MESSAGE_ID = "MessageId";
+    /**
+     * 消息模板常量；
+     * 如果新建模板/账号时，没传入则用该常量
+     */
+    public static final String DEFAULT_CREATOR = "hwoss";
+    public static final String DEFAULT_UPDATOR = "hwoss";
+    public static final String DEFAULT_TEAM = "Hwoss";
+    public static final String DEFAULT_AUDITOR = "Hwoss";
 }

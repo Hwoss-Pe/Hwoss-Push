@@ -27,8 +27,8 @@ import java.util.Map;
 @Api("发送消息")
 @RequestMapping("/messageTemplate")
 public class MessageTemplateController {
-//    @Autowired
-//    private MessageTemplateService messageTemplateService;
+    @Autowired
+    private MessageTemplateService messageTemplateService;
 
     @Autowired
     private SendService sendService;
@@ -36,8 +36,6 @@ public class MessageTemplateController {
     @Autowired
     private RecallService recallService;
 
-//    @Autowired
-//    private LoginUtils loginUtils;
 
     @Value("${hwoss.business.upload.crowd.path}")
     private String dataPath;

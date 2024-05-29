@@ -9,8 +9,6 @@ import java.util.List;
 public interface MessageTemplateService {
 
 
-//    Page<MessageTemplate> queryList(MessageTemplateParam messageTemplateParam);
-
     /**
      * 统计未删除的条数
      *
