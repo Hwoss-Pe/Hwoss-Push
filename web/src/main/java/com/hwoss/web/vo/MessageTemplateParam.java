@@ -13,7 +13,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllowPrintStacktrace
-@Builder
 public class MessageTemplateParam {
 
     /**

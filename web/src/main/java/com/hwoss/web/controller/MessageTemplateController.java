@@ -56,7 +56,7 @@ public class MessageTemplateController {
     private RecallService recallService;
 
 
-    @Value("${austin.business.upload.crowd.path}")
+    @Value("${hwoss.business.upload.crowd.path}")
     private String dataPath;
 
 

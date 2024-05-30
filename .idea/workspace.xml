@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="增加Data，MessageTemplate，ChannelAccountde的controller类，现功能就是能够模板，发送信息，链路追踪，定时任务等">
-      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/vo/MessageTemplateParam.java" afterDir="false" />
+    <list default="true" id="3f3390d7-2ffd-47e3-9bfa-0233f336a4ce" name="默认变更列表" comment="完成封装MessageTemplateController，并且可以对前端传入的页码进行处理渲染">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/common/enums/RespStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/common/enums/RespStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/DeduplicationBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/DeduplicationBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/DiscardBusiness.java" beforeDir="false" afterPath="$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/business/DiscardBusiness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/MessageTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/MessageTemplateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/service/MessageTemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/service/MessageTemplateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/service/impl/MessageTemplateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/service/impl/MessageTemplateServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/vo/MessageTemplateParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/hwoss/web/vo/MessageTemplateParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,13 +70,16 @@
     <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/SendController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/cron/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/handler/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e2e2d227-28fc-42ba-a46c-c5f5209ffa65/console_1.sql" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/support/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/service-api/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/service-api-impl/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/web/vo/MessageTemplateParam.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/xxl/service/CronTaskService.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e2e2d227-28fc-42ba-a46c-c5f5209ffa65/console.sql" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/DataController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/src/main/java/com/hwoss/web/controller/MessageTemplateController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/web/src/main/resources/logback.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/service-api-impl/src/main/java/com/hwoss/service/impl/config/PipeLineConfig.java" root0="FORCE_HIGHLIGHTING" />
@@ -125,7 +130,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="SELECTIVE" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xxl-job-2.3.0/xxl-job-2.3.0" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -156,7 +161,7 @@
       <recent name="config" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.MessageApplication">
+  <component name="RunManager" selected="应用程序.HwossBootStrap">
     <configuration name="HwossBootStrap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.hwoss.HwossBootStrap" />
@@ -192,8 +197,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.MessageApplication" />
         <item itemvalue="应用程序.HwossBootStrap" />
+        <item itemvalue="Spring Boot.MessageApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -263,14 +268,7 @@
       <workItem from="1716971470035" duration="5314000" />
       <workItem from="1716983788680" duration="2289000" />
       <workItem from="1716990616564" duration="85000" />
-      <workItem from="1716990722447" duration="1546000" />
-    </task>
-    <task id="LOCAL-00018" summary="常量设计，引入jpa的相关用法实现在MessageTemplateDao里面，以及TaskInfo和对应的MessTemplate数据进行组装，运用Optional类型，优化jdk8前比较丑陋的写法，衍生出多种api">
-      <created>1715442671766</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1715442671766</updated>
+      <workItem from="1716990722447" duration="7292000" />
     </task>
     <task id="LOCAL-00019" summary="定义枚举类ChannelType，并且对不同的渠道分别建立模型，都去实现对应的变量，定义了枚举接口，让其他枚举继承后重写必有得code和description方法&#10;在assembleTaskInfoList组装参数，目前到替换占位符，这块用spring的api去实现">
       <created>1715505824969</created>
@@ -608,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716975810456</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="完成封装MessageTemplateController，并且可以对前端传入的页码进行处理渲染">
+      <created>1716992517969</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1716992517970</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +638,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成整个消息去重操作" />
     <MESSAGE value="完成限流操作&#10;先完成自定义注解，通过注解来决定具体的实现类的类型，用注解里的属性可选，编写对应FlowControlParam存储对应的初始限流器和限流策略，限流大小RateLimiter，&#10;FlowControlFactory存储对应的不同限流方式，对应不同服务的map，在初始化的时候通过上下文进行反射去找注解，然后把对应的类获取后通过注解找到类型映射完成。编写对应获取服务配置类，以配置中心为准，flowControl主方法进行限流操作，对于阻塞时间进行一个日志记录" />
     <MESSAGE value="完成Handler的对应抽象类" />
     <MESSAGE value="编写ChannelAccountDao，把远程url文件传输到本地路径" />
@@ -658,7 +662,8 @@
     <MESSAGE value="区分自定义异常和其他异常，在web层进行全局捕获如何处理后返回结构并且打印日志" />
     <MESSAGE value="写了service层的逻辑并且对返回数据进行一定封装，ChannelAccountService&#10;DataService的一些逻辑实现" />
     <MESSAGE value="增加Data，MessageTemplate，ChannelAccountde的controller类，现功能就是能够模板，发送信息，链路追踪，定时任务等" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加Data，MessageTemplate，ChannelAccountde的controller类，现功能就是能够模板，发送信息，链路追踪，定时任务等" />
+    <MESSAGE value="完成封装MessageTemplateController，并且可以对前端传入的页码进行处理渲染" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成封装MessageTemplateController，并且可以对前端传入的页码进行处理渲染" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -668,11 +673,6 @@
           <url>file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/receiver/rabbit/RabbitMqReceiver.java</url>
           <line>43</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/handler/src/main/java/com/hwoss/handler/handler/impl/SmsHandler.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cron/src/main/java/com/hwoss/cron/handler/NightShieldLazyPendingHandler.java</url>

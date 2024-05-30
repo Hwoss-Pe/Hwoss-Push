@@ -27,20 +27,21 @@ public class DiscardBusiness implements BusinessProcess<TaskInfo> {
     @Autowired
     private LogUtils logUtils;
 
-    @Override
-    public void process(ProcessContext<TaskInfo> context) {
-        TaskInfo taskInfo = context.getProcessModel();
-        JSONArray array = JSON.parseArray(configService.getProperty(DISCARD_MESSAGE_KEY, CommonConstant.EMPTY_VALUE_JSON_ARRAY));
+//    通过messageId对模板进行阻断发送
+@Override
+public void process(ProcessContext<TaskInfo> context) {
+    TaskInfo taskInfo = context.getProcessModel();
+    JSONArray array = JSON.parseArray(configService.getProperty(DISCARD_MESSAGE_KEY, CommonConstant.EMPTY_VALUE_JSON_ARRAY));
 //       如果模板处于隔绝状态就直接在下发的时候阻断
-        if (array.contains(taskInfo.getMessageTemplateId().toString())) {
-            logUtils.print(AnchorInfo.builder()
-                                   .businessId(taskInfo.getBusinessId())
-                                   .messageId(taskInfo.getMessageId())
-                                   .bizId(taskInfo.getBizId())
-                                   .ids(taskInfo.getReceivers())
-                                   .state(AnchorState.DISCARD.getCode())
-                                   .build());
-            context.setIsBreak(true);
-        }
+    if (array.contains(taskInfo.getMessageTemplateId().toString())) {
+        logUtils.print(AnchorInfo.builder()
+                               .businessId(taskInfo.getBusinessId())
+                               .messageId(taskInfo.getMessageId())
+                               .bizId(taskInfo.getBizId())
+                               .ids(taskInfo.getReceivers())
+                               .state(AnchorState.DISCARD.getCode())
+                               .build());
+        context.setIsBreak(true);
     }
+}
 }
